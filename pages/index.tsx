@@ -1,3 +1,11 @@
 export default function Home() {
-  return <h1>My Next JS Template</h1>;
+  return <div>contnebt</div>;
+}
+
+export function getStaticProps() {
+  return {
+    props: {
+      id: 1,
+    },
+  };
 }
