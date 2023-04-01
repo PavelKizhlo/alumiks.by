@@ -21,7 +21,7 @@ export default function Header() {
     <header
       className={`fixed w-screen bg-header-color h-20 px-32 flex items-center justify-between font-normal text-xl ${
         scrollDirection === 'down' ? '-top-20' : 'top-0'
-      }`}
+      } transition-[top] duration-150 ease-linear`}
     >
       <Link href="/">
         <Image src={logo} alt="logo" />
