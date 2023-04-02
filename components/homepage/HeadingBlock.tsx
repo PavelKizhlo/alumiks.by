@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
+import { Button } from '@material-tailwind/react';
+
 import bgImg from '../../public/imgs/heading-block-bg.png';
 
 function HeadingBlock() {
@@ -11,12 +13,9 @@ function HeadingBlock() {
         <h1 className="text-white font-bold text-4xl leading-tight drop-shadow-md">
           {'наша компания является производителем металлоизделий из тонколистовой оцинкованной стали'.toUpperCase()}
         </h1>
-        <button
-          type="button"
-          className="border-solid rounded-lg bg-header-color py-2 px-4 text-white drop-shadow-md"
-        >
+        <Button className="bg-header-color font-inherit hover:shadow-indigo-300">
           {'заказать звонок'.toUpperCase()}
-        </button>
+        </Button>
       </div>
     </article>
   );

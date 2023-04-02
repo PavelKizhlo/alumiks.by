@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Card } from '@material-tailwind/react';
 import { openSans } from '../../utils/fonts';
 
 function ProductsBlock() {
@@ -81,11 +82,14 @@ function ProductsBlock() {
           <h3 className="font-medium text-xl">{groupe.groupe_title.toUpperCase()}</h3>
           <div className="flex flex-row gap-10">
             {groupe.items.map((item) => (
-              <div key={item.id} className="relative h-[350px] w-[350px] bg-neutral-500">
-                <div className="absolute bottom-0 w-full text-center py-4 bg-blured text-white flex items-center justify-center">
+              <Card
+                key={item.id}
+                className="relative h-[350px] w-[350px] bg-gray-600 cursor-pointer"
+              >
+                <div className="absolute bottom-0 w-full text-center py-4 bg-blured text-white flex items-center justify-center rounded-b-xl">
                   <h4 className="w-fit border-b-2 border-white">{item.title}</h4>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </section>

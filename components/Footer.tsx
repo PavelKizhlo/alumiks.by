@@ -3,7 +3,7 @@ import Link from 'next/link';
 import phoneIcon from '@/public/icons/phone-icon.svg';
 import mailIcon from '@/public/icons/mail-icon.svg';
 import locationIcon from '@/public/icons/location-icon.svg';
-import { openSans } from "@/utils/fonts";
+import { openSans } from '@/utils/fonts';
 
 export default function Footer() {
   const CATALOG_ITEMS = [
@@ -53,8 +53,8 @@ export default function Footer() {
           </div>
           <div className="flex flex-row gap-4">
             <Image src={mailIcon} alt="icon" height={27} width={27} />
-            <Link href="mailto: MAIL(заполнить)" target="_blank">
-              MAIL(заполнить)
+            <Link href="mailto: ALUmix@gmail.com" target="_blank">
+              ALUmix@gmail.com
             </Link>
           </div>
         </section>
