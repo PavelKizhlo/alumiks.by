@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Card } from '@material-tailwind/react';
 import { openSans } from '../../../utils/fonts';
 
 interface ProductModel {
@@ -33,26 +34,35 @@ function ProductPage({ product }: Props) {
             <h2 className="text-xl font-medium">{'Конфигурация'.toUpperCase()}</h2>
             <div className="grid grid-cols-3 items-center gap-8">
               {product.configuration.map((item) => (
-                <div key={item.id} className="flex flex-col items-center gap-2">
-                  <div className="h-[220px] w-[220px] bg-gray-600">{item.img}</div>
+                <Card
+                  key={item.id}
+                  className="flex flex-col items-center gap-2 p-4 text-sm text-black"
+                >
+                  <div className="h-[200px] w-full bg-gray-600">{item.img}</div>
                   <h3 className="font-bold">{item.title}</h3>
                   <p className="text-center">{item.description}</p>
-                </div>
+                </Card>
               ))}
             </div>
           </section>
-          <section>
+          <section className="flex flex-col gap-4">
             <h2 className="text-xl font-medium">{'Цветовые решения'.toUpperCase()}</h2>
-            <div>
+            <div className="grid grid-cols-4 items-center gap-8">
               {product.colors.map((item) => (
-                <div key={item.id}>
-                  <div className={`bg-${item.colorCode}`} />
-                  <h3>{item.title}</h3>
-                </div>
+                <Card
+                  key={item.id}
+                  className="flex flex-col items-center gap-2 p-4 text-sm text-black"
+                >
+                  <div
+                    className=" h-[100px] w-full "
+                    style={{ backgroundColor: item.colorCode }}
+                  />
+                  <h3 className="font-bold">{item.title}</h3>
+                </Card>
               ))}
             </div>
           </section>
-          <section>
+          <section className="flex flex-col gap-4">
             <h2 className="text-xl font-medium">{'Стоимость'.toUpperCase()}</h2>
             <div className="h-[200px] w-full bg-gray-600">{product.price}</div>
           </section>
@@ -76,7 +86,13 @@ export async function getStaticProps() {
       { id: '1', src: '' },
       { id: '2', src: '' },
     ],
-    colors: [{ id: '1', title: '', colorCode: '' }],
+    colors: [
+      { id: '1', title: 'Голубой', colorCode: '#4287f5' },
+      { id: '2', title: 'Голубой', colorCode: '#d91009' },
+      { id: '3', title: 'Голубой', colorCode: '#de1f7b' },
+      { id: '4', title: 'Голубой', colorCode: '#9ade87' },
+      { id: '5', title: 'Голубой', colorCode: '#d17e5a' },
+    ],
     configuration: [
       {
         id: '1',
