@@ -19,15 +19,15 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-screen bg-header-color h-20 px-32 z-10 font-normal text-xl flex justify-center ${
+      className={`fixed z-10 flex  h-20 w-screen justify-center bg-header-color px-32 text-xl font-normal ${
         scrollDirection === 'down' ? '-top-20' : 'top-0'
       } transition-[top] duration-150 ease-linear`}
     >
-      <div className="container mx-auto w-full flex items-center justify-between">
+      <div className="container mx-auto flex w-full items-center justify-between">
         <Link href="/">
           <Image src={logo} alt="logo" />
         </Link>
-        <nav className="flex items-center flex-row divide-x-2 divide-solid divide-white text-white">
+        <nav className="flex flex-row items-center divide-x-2 divide-solid divide-white text-white">
           {NAVIGATION.map((item) => (
             <div
               key={item.id}
