@@ -7,10 +7,10 @@ import bgImg from '../../public/imgs/heading-block-bg.png';
 
 function HeadingBlock() {
   return (
-    <article className="bg-headingBlockBG bg-contain bg-no-repeat h-fit relative flex flex-col items-center">
-      <Image src={bgImg} alt="background" className="w-full h-auto" />
-      <div className="container mx-auto absolute h-full w-full top-0 flex flex-col justify-between items-center px-32 pt-32 pb-12">
-        <h1 className="text-white font-bold text-4xl leading-tight drop-shadow-md">
+    <article className="relative flex h-fit flex-col items-center bg-headingBlockBG bg-contain bg-no-repeat">
+      <Image src={bgImg} alt="background" className="h-auto w-full" />
+      <div className="container absolute top-0 mx-auto flex h-full w-full flex-col items-center justify-between px-32 pb-12 pt-32">
+        <h1 className="text-4xl font-bold leading-tight text-white drop-shadow-md">
           {'наша компания является производителем металлоизделий из тонколистовой оцинкованной стали'.toUpperCase()}
         </h1>
         <Button className="bg-header-color font-inherit hover:shadow-indigo-300">

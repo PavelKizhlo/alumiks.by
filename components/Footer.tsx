@@ -22,10 +22,10 @@ export default function Footer() {
 
   return (
     <footer
-      className={`bg-black text-white px-32 py-10 font-semibold text-l ${openSans.className}`}
+      className={`text-l bg-black px-32 py-10 font-semibold text-white ${openSans.className}`}
     >
-      <div className="container mx-auto grid grid-cols-3 items-stetch divide-x-2 divide-solid divide-white">
-        <section className="h-full flex flex-col items-center pr-12 gap-4">
+      <div className="items-stetch container mx-auto grid grid-cols-3 divide-x-2 divide-solid divide-white">
+        <section className="flex h-full flex-col items-center gap-4 pr-12">
           <h3 className="text-xl">
             <Link href="/products">Коталог</Link>
           </h3>
@@ -37,13 +37,13 @@ export default function Footer() {
             ))}
           </ul>
         </section>
-        <section className="h-full flex flex-col items-start px-12 gap-4">
-          <h3 className="text-xl self-center">
+        <section className="flex h-full flex-col items-start gap-4 px-12">
+          <h3 className="self-center text-xl">
             <Link href="/contacts">Контакты</Link>
           </h3>
           <div className="flex flex-row gap-4">
             <Image src={phoneIcon} alt="icon" height={27} width={27} />
-            <div className="h-full flex flex-col gap-2">
+            <div className="flex h-full flex-col gap-2">
               <Link href="tel:+375294543969">+375 29 454 39 69</Link>
               <Link href="tel:+375294543969">+375 29 454 39 69</Link>
             </div>
@@ -70,9 +70,9 @@ export default function Footer() {
             </div>
           </div>
         </section>
-        <section className="h-full flex flex-col items-center pl-12 gap-4">
+        <section className="flex h-full flex-col items-center gap-4 pl-12">
           <h3 className="text-xl">Правовая информация</h3>
-          <div className="h-full flex flex-col justify-between">
+          <div className="flex h-full flex-col justify-between">
             <p>
               Все права на материалы сайта принадлежат правообладателю компании “АЛЮМИКС”.
               Использование данных материалов в любой форме может производится только с

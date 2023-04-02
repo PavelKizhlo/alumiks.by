@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { Card } from '@material-tailwind/react';
-import { openSans } from '../../utils/fonts';
+import { openSans } from '@/utils/fonts';
 
 function ProductsBlock() {
   const PRODUCTS = [
     {
       id: 1,
-      groupe_title: 'Крыша',
+      group_title: 'Крыша',
       items: [
         {
           id: 1.1,
@@ -28,7 +28,7 @@ function ProductsBlock() {
     },
     {
       id: 2,
-      groupe_title: 'Заборы',
+      group_title: 'Заборы',
       items: [
         {
           id: 2.1,
@@ -49,7 +49,7 @@ function ProductsBlock() {
     },
     {
       id: 3,
-      groupe_title: 'Окна',
+      group_title: 'Окна',
       items: [
         {
           id: 3.1,
@@ -72,21 +72,21 @@ function ProductsBlock() {
 
   return (
     <article
-      className={`container mx-auto px-32 pb-12 flex flex-col items-center gap-10 ${openSans.className}`}
+      className={`container mx-auto flex flex-col items-center gap-10 px-32 pb-12 ${openSans.className}`}
     >
-      <h2 className="font-bold text-4xl border-b-2 border-header-color px-2">
+      <h2 className="border-b-2 border-header-color px-2 text-4xl font-bold">
         Производим
       </h2>
-      {PRODUCTS.map((groupe) => (
-        <section key={groupe.id} className="flex flex-col items-center gap-6">
-          <h3 className="font-medium text-xl">{groupe.groupe_title.toUpperCase()}</h3>
+      {PRODUCTS.map((group) => (
+        <section key={group.id} className="flex flex-col items-center gap-6">
+          <h3 className="text-xl font-medium">{group.group_title.toUpperCase()}</h3>
           <div className="flex flex-row gap-10">
-            {groupe.items.map((item) => (
+            {group.items.map((item) => (
               <Card
                 key={item.id}
                 className="relative h-[320px] w-[320px] bg-gray-600 cursor-pointer"
               >
-                <div className="absolute bottom-0 w-full text-center py-4 bg-blured text-white flex items-center justify-center rounded-b-xl">
+                <div className="absolute bottom-0 flex w-full items-center justify-center rounded-b-xl bg-blured py-4 text-center text-white">
                   <h4 className="w-fit border-b-2 border-white">{item.title}</h4>
                 </div>
               </Card>
