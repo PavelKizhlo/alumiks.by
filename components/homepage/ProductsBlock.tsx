@@ -84,7 +84,7 @@ function ProductsBlock() {
             {group.items.map((item) => (
               <Card
                 key={item.id}
-                className="relative h-[320px] w-[320px] bg-gray-600 cursor-pointer"
+                className="relative h-[320px] w-[320px] cursor-pointer bg-gray-600"
               >
                 <div className="absolute bottom-0 flex w-full items-center justify-center rounded-b-xl bg-blured py-4 text-center text-white">
                   <h4 className="w-fit border-b-2 border-white">{item.title}</h4>
