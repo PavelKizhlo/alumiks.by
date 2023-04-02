@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         'header-color': '#8DA0DF',
       },
+      backgroundImage: {
+        headingBlockBG: "url('../public/imgs/heading-block-bg.png')",
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,15 @@
+import AdvantagesBlock from '../components/homepage/AdvantagesBlock';
+import HeadingBlock from '../components/homepage/HeadingBlock';
+import ProductsBlock from '../components/homepage/ProductsBlock';
+
 export default function Home() {
-  return <div>contnebt</div>;
+  return (
+    <>
+      <HeadingBlock />
+      <AdvantagesBlock />
+      <ProductsBlock />
+    </>
+  );
 }
 
 export function getStaticProps() {
