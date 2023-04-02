@@ -11,7 +11,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="app-wrapper">
       <Header />
-      <main>{children}</main>
+      <main className='pt-20'>{children}</main>
       <Footer />
     </div>
   );

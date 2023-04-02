@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import phoneIcon from '../public/icons/phone-icon.svg';
-import mailIcon from '../public/icons/mail-icon.svg';
-import locationIcon from '../public/icons/location-icon.svg';
-import { openSans } from '../utils/fonts';
+import phoneIcon from '@/public/icons/phone-icon.svg';
+import mailIcon from '@/public/icons/mail-icon.svg';
+import locationIcon from '@/public/icons/location-icon.svg';
+import { openSans } from "@/utils/fonts";
 
 export default function Footer() {
   const CATALOG_ITEMS = [
@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="container mx-auto grid grid-cols-3 items-stetch divide-x-2 divide-solid divide-white">
         <section className="h-full flex flex-col items-center pr-12 gap-4">
           <h3 className="text-xl">
-            <Link href="/catalog">Коталог</Link>
+            <Link href="/products">Коталог</Link>
           </h3>
           <ul className="flex flex-col gap-2">
             {CATALOG_ITEMS.map((item) => (

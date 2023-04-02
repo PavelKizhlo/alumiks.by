@@ -4,12 +4,12 @@ import Image from 'next/image';
 import logo from '@/public/logos/logo.svg';
 
 import { useRouter } from 'next/router';
-import useScrollDirection from '../utils/useScrollDirection';
+import useScrollDirection from '@/utils/useScrollDirection';
 
 export default function Header() {
   const NAVIGATION = [
     { id: 1, title: 'Главная', path: '/' },
-    { id: 2, title: 'Каталог', path: '/catalog' },
+    { id: 2, title: 'Каталог', path: '/products' },
     { id: 3, title: 'О нас', path: '/about' },
     { id: 4, title: 'Контакты', path: '/contacts' },
   ];
