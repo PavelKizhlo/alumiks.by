@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
 import phoneIcon from '@/public/icons/phone-icon.svg';
 import mailIcon from '@/public/icons/mail-icon.svg';
 import locationIcon from '@/public/icons/location-icon.svg';
+import clockIcon from '@/public/icons/clock-icon.svg';
+
 import { openSans } from '@/utils/fonts';
 
 export default function Footer() {
@@ -56,6 +59,15 @@ export default function Footer() {
             <Link href="mailto: ALUmix@gmail.com" target="_blank">
               ALUmix@gmail.com
             </Link>
+          </div>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-row gap-4">
+              <Image src={clockIcon} alt="icon" height={27} width={27} />
+              <div className="h-full flex flex-col gap-2">
+                <div>Пн–пт 9:00 – 18:00</div>
+                <div>Сб–вс 9:00 – 16:00</div>
+              </div>
+            </div>
           </div>
         </section>
         <section className="h-full flex flex-col items-center pl-12 gap-4">
