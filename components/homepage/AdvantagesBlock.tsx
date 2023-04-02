@@ -58,7 +58,9 @@ function AdvantagesBlock() {
   ];
 
   return (
-    <article className={`px-32 py-12 flex flex-col gap-12 ${openSans.className}`}>
+    <article
+      className={`container mx-auto px-32 py-12 flex flex-col gap-12 ${openSans.className}`}
+    >
       <section className="flex flex-col items-center gap-8">
         <h2 className="font-bold text-4xl border-b-2 border-header-color px-2">
           Преимущества нашей компании
