@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="items-stetch container mx-auto grid grid-cols-3 divide-x-2 divide-solid divide-white">
         <section className="flex h-full flex-col items-center gap-4 pr-12">
           <h3 className="text-xl">
-            <Link href="/products">Коталог</Link>
+            <Link href="/products">Каталог</Link>
           </h3>
           <ul className="flex flex-col gap-2">
             {CATALOG_ITEMS.map((item) => (

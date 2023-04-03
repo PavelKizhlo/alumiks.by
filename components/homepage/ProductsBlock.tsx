@@ -2,85 +2,24 @@ import React from 'react';
 
 import { Card } from '@material-tailwind/react';
 import { openSans } from '@/utils/fonts';
+import { ProductGroup } from '@/types/product';
 
-function ProductsBlock() {
-  const PRODUCTS = [
-    {
-      id: 1,
-      group_title: 'Крыша',
-      items: [
-        {
-          id: 1.1,
-          img: '',
-          title: 'Доборные элементы кровли',
-        },
-        {
-          id: 1.2,
-          img: '',
-          title: 'Отливы и откосы',
-        },
-        {
-          id: 1.3,
-          img: '',
-          title: 'Дымники',
-        },
-      ],
-    },
-    {
-      id: 2,
-      group_title: 'Заборы',
-      items: [
-        {
-          id: 2.1,
-          img: '',
-          title: 'Евроштакетник',
-        },
-        {
-          id: 2.2,
-          img: '',
-          title: 'Еще заборы',
-        },
-        {
-          id: 2.3,
-          img: '',
-          title: 'Еще заборы',
-        },
-      ],
-    },
-    {
-      id: 3,
-      group_title: 'Окна',
-      items: [
-        {
-          id: 3.1,
-          img: '',
-          title: 'Пластиковые подоконники',
-        },
-        {
-          id: 3.2,
-          img: '',
-          title: 'Алюминиевые рамы',
-        },
-        {
-          id: 3.3,
-          img: '',
-          title: 'Еще что-то оконное',
-        },
-      ],
-    },
-  ];
+interface ProductsBlockProps {
+  products: ProductGroup[];
+}
 
+function ProductsBlock({ products }: ProductsBlockProps) {
   return (
-    <article
+    <section
       className={`container mx-auto flex flex-col items-center gap-10 px-32 pb-12 ${openSans.className}`}
     >
       <h2 className="border-b-2 border-header-color px-2 text-4xl font-bold">
         Производим
       </h2>
-      {PRODUCTS.map((group) => (
+      {products.map((group) => (
         <section key={group.id} className="flex flex-col items-center gap-6">
-          <h3 className="text-xl font-medium">{group.group_title.toUpperCase()}</h3>
-          <div className="flex flex-row gap-10">
+          <h3 className="text-xl font-medium">{group.title.toUpperCase()}</h3>
+          <div className="flex flex-row flex-wrap justify-center gap-10">
             {group.items.map((item) => (
               <Card
                 key={item.id}
@@ -94,7 +33,7 @@ function ProductsBlock() {
           </div>
         </section>
       ))}
-    </article>
+    </section>
   );
 }
 

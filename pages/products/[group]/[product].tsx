@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Card } from '@material-tailwind/react';
-import { openSans } from '../../../utils/fonts';
+import { openSans } from '@/utils/fonts';
 
 interface ProductModel {
   title: string;
@@ -17,7 +17,7 @@ interface Props {
 
 function ProductPage({ product }: Props) {
   return (
-    <article
+    <div
       className={`container mx-auto flex flex-col items-center gap-12 px-32 py-12 ${openSans.className}`}
     >
       <h1 className="w-fit border-b-2 border-header-color px-2 text-4xl font-bold">
@@ -68,7 +68,7 @@ function ProductPage({ product }: Props) {
           </section>
         </div>
       </div>
-    </article>
+    </div>
   );
 }
 
