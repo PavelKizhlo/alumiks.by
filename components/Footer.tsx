@@ -22,7 +22,7 @@ export default function Footer() {
 
   return (
     <footer
-      className={`text-l bg-black px-32 py-10 font-semibold text-white ${openSans.className}`}
+      className={`text-l bg-black  py-10 font-semibold text-white ${openSans.className}`}
     >
       <div className="items-stetch container mx-auto grid grid-cols-3 divide-x-2 divide-solid divide-white">
         <section className="flex h-full flex-col items-center gap-4 pr-12">
@@ -63,7 +63,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <div className="flex flex-row gap-4">
               <Image src={clockIcon} alt="icon" height={27} width={27} />
-              <div className="h-full flex flex-col gap-2">
+              <div className="flex h-full flex-col gap-2">
                 <div>Пн–пт 9:00 – 18:00</div>
                 <div>Сб–вс 9:00 – 16:00</div>
               </div>

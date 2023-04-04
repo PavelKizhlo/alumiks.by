@@ -6,30 +6,30 @@ import mailIcon from '@/public/icons/mail-icon-2.svg';
 import locationIcon from '@/public/icons/location-icon-2.svg';
 import clockIcon from '@/public/icons/clock-icon-2.svg';
 
-import { openSans } from '../utils/fonts';
+import { openSans } from '@/utils/fonts';
 
 export default function Contacts() {
   return (
     <article
-      className={`container mx-auto px-32 py-12 flex flex-col items-center gap-12 ${openSans.className}`}
+      className={`container mx-auto flex flex-col items-center gap-12  py-12 ${openSans.className}`}
     >
-      <h2 className="w-fit font-bold text-4xl border-b-2 border-header-color px-2">
+      <h2 className="w-fit border-b-2 border-header-color px-2 text-4xl font-bold">
         Контакты
       </h2>
-      <div className="flex gap-28 items-center">
+      <div className="flex items-center gap-28">
         <div className="flex flex-col gap-6">
           <section className="flex flex-col gap-2">
-            <h3 className="font-semibold text-xl">Наши телефоны</h3>
+            <h3 className="text-xl font-semibold">Наши телефоны</h3>
             <div className="flex flex-row gap-4">
               <Image src={phoneIcon} alt="icon" height={27} width={27} />
-              <div className="h-full flex flex-col gap-2">
+              <div className="flex h-full flex-col gap-2">
                 <Link href="tel:+375294543969">+375 29 454 39 69</Link>
                 <Link href="tel:+375294543969">+375 29 454 39 69</Link>
               </div>
             </div>
           </section>
           <section className="flex flex-col gap-4">
-            <h3 className="font-semibold text-xl">Пишите нам на e-mail</h3>
+            <h3 className="text-xl font-semibold">Пишите нам на e-mail</h3>
             <div className="flex flex-row gap-4">
               <Image src={mailIcon} alt="icon" height={27} width={27} />
               <Link href="mailto: ALUmix@gmail.com" target="_blank">
@@ -38,7 +38,7 @@ export default function Contacts() {
             </div>
           </section>
           <section className="flex flex-col gap-4">
-            <h3 className="font-semibold text-xl">Адрес нашего офиса</h3>
+            <h3 className="text-xl font-semibold">Адрес нашего офиса</h3>
             <div className="flex flex-row gap-4">
               <Image src={locationIcon} alt="icon" height={27} width={27} />
               <Link href="https://goo.gl/maps/XHTaWd377GW9mweQ7" target="_blank">
@@ -47,10 +47,10 @@ export default function Contacts() {
             </div>
           </section>
           <section className="flex flex-col gap-4">
-            <h3 className="font-semibold text-xl">Время работы</h3>
+            <h3 className="text-xl font-semibold">Время работы</h3>
             <div className="flex flex-row gap-4">
               <Image src={clockIcon} alt="icon" height={27} width={27} />
-              <div className="h-full flex flex-col gap-2">
+              <div className="flex h-full flex-col gap-2">
                 <div>Пн–пт 9:00 – 18:00</div>
                 <div>Сб–вс 9:00 – 16:00</div>
               </div>

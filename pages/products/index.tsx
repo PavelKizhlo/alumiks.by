@@ -13,7 +13,7 @@ interface Props {
 export default function Products({ products }: Props) {
   return (
     <div
-      className={`container mx-auto flex flex-col items-center gap-12 px-32 py-12 ${openSans.className}`}
+      className={`container mx-auto flex flex-col items-center gap-12  py-12 ${openSans.className}`}
     >
       <h1 className="w-fit border-b-2 border-header-color px-2 text-4xl font-bold">
         Каталог

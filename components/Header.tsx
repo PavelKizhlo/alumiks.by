@@ -19,11 +19,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-10 flex  h-20 w-screen justify-center bg-header-color px-32 text-xl font-normal ${
+      className={`fixed z-10 flex  h-20 w-screen justify-center bg-header-color  text-xl font-normal ${
         scrollDirection === 'down' ? '-top-20' : 'top-0'
       } transition-[top] duration-150 ease-linear`}
     >
-      <div className="mx-auto flex w-full items-center justify-between">
+      <div className="mx-auto flex w-full items-center justify-between px-32">
         <Link href="/">
           <Image src={logo} alt="logo" />
         </Link>
