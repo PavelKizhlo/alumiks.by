@@ -23,7 +23,7 @@ export default function Header() {
         scrollDirection === 'down' ? '-top-20' : 'top-0'
       } transition-[top] duration-150 ease-linear`}
     >
-      <div className="container mx-auto flex w-full items-center justify-between">
+      <div className="mx-auto flex w-full items-center justify-between">
         <Link href="/">
           <Image src={logo} alt="logo" />
         </Link>

@@ -17,7 +17,7 @@ const PRODUCTS: ProductGroup[] = [
       {
         id: 1.1,
         slug: 'doborniye-elementy',
-        images: [{ id: 1, src: '' }],
+        images: [{ id: 1, src: '/products/roof-ridge.jpeg' }],
         title: 'Доборные элементы кровли',
         colors: ocinkovannayaStalColors,
         configurations: [
@@ -48,7 +48,7 @@ const PRODUCTS: ProductGroup[] = [
       {
         id: 1.2,
         slug: 'otlivy-otkosy',
-        images: [{ id: 1, src: '' }],
+        images: [{ id: 1, src: '/products/otlivy.jpeg' }],
         title: 'Отливы и откосы',
         colors: ocinkovannayaStalColors,
         configurations: [

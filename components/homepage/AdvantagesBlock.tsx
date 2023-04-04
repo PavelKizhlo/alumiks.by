@@ -12,7 +12,7 @@ interface AdvantagesBlockProps {
 function AdvantagesBlock({ advantages, materials }: AdvantagesBlockProps) {
   return (
     <section
-      className={`container mx-auto flex flex-col gap-12 px-32 py-12 ${openSans.className}`}
+      className={`container mx-auto mb-20 flex flex-col gap-12 px-32 pt-20 ${openSans.className}`}
     >
       <div className="flex flex-col items-center gap-8">
         <h2 className="border-b-2 border-header-color px-2 text-4xl font-bold">
