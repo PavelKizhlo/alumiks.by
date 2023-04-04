@@ -6,17 +6,9 @@ import logo from '@/public/logos/logo.svg';
 import { useRouter } from 'next/router';
 import useScrollDirection from '@/utils/useScrollDirection';
 import { useState } from 'react';
-import {
-  Menu,
-  MenuHandler,
-  Button,
-  MenuList,
-  Card,
-  MenuItem,
-  Typography,
-} from '@material-tailwind/react';
+import { Menu, MenuHandler, MenuList } from '@material-tailwind/react';
 
-import { ChevronDownIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import PRODUCTS from '../data/products';
 
 export default function Header() {
