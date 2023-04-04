@@ -5,6 +5,19 @@ import logo from '@/public/logos/logo.svg';
 
 import { useRouter } from 'next/router';
 import useScrollDirection from '@/utils/useScrollDirection';
+import { useState } from 'react';
+import {
+  Menu,
+  MenuHandler,
+  Button,
+  MenuList,
+  Card,
+  MenuItem,
+  Typography,
+} from '@material-tailwind/react';
+
+import { ChevronDownIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
+import PRODUCTS from '../data/products';
 
 export default function Header() {
   const NAVIGATION = [
@@ -18,6 +31,13 @@ export default function Header() {
   const { pathname } = useRouter();
   const scrollDirection = useScrollDirection();
 
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const triggers = {
+    onMouseEnter: () => setOpenMenu(true),
+    onMouseLeave: () => setOpenMenu(false),
+  };
+
   return (
     <header
       className={`fixed z-10 flex  h-20 w-screen justify-center bg-header-color px-32 text-xl font-normal ${
@@ -29,14 +49,45 @@ export default function Header() {
           <Image src={logo} alt="logo" />
         </Link>
         <nav className="flex flex-row items-center divide-x-2 divide-solid divide-white text-white">
-          {NAVIGATION.map((item) => (
-            <div
-              key={item.id}
-              className={`px-6 ${pathname === item.path && 'text-black'}`}
-            >
-              <Link href={item.path}>{item.title.toUpperCase()}</Link>
-            </div>
-          ))}
+          {NAVIGATION.map((item) =>
+            item.path === '/products' ? (
+              <Menu open={openMenu} handler={setOpenMenu} key={item.id}>
+                <MenuHandler>
+                  <div
+                    className={`flex items-center gap-2 px-6 ${
+                      pathname === item.path && 'text-black'
+                    }`}
+                    {...triggers}
+                  >
+                    <Link href={item.path}>{item.title.toUpperCase()}</Link>
+                    <ChevronDownIcon
+                      strokeWidth={2.5}
+                      className={`h-3.5 w-3.5 transition-transform ${
+                        openMenu ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </div>
+                </MenuHandler>
+                <MenuList
+                  {...triggers}
+                  className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible text-inherit lg:grid"
+                >
+                  {PRODUCTS.map((el) => (
+                    <div key={el.id}>
+                      <Link href="/">{el.title}</Link>
+                    </div>
+                  ))}
+                </MenuList>
+              </Menu>
+            ) : (
+              <div
+                key={item.id}
+                className={`px-6 ${pathname === item.path && 'text-black'}`}
+              >
+                <Link href={item.path}>{item.title.toUpperCase()}</Link>
+              </div>
+            )
+          )}
         </nav>
       </div>
     </header>
