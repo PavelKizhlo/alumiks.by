@@ -44,26 +44,26 @@ export default function Footer() {
           <div className="flex flex-row gap-4">
             <Image src={phoneIcon} alt="icon" height={27} width={27} />
             <div className="flex h-full flex-col gap-2">
-              <Link href="tel:+375294543969">+375 29 454 39 69</Link>
-              <Link href="tel:+375294543969">+375 29 454 39 69</Link>
+              <Link href="tel:80222634197">(80222) 63-41-97 (тел/факс)</Link>
+              <Link href="tel:+375296544795">(8029) 654-47-95</Link>
             </div>
           </div>
           <div className="flex flex-row gap-4">
             <Image src={locationIcon} alt="icon" height={27} width={27} />
-            <Link href="https://goo.gl/maps/XHTaWd377GW9mweQ7" target="_blank">
-              г. Могилев, б–р Непокоренных, д.77 пв. 11
+            <Link href="https://goo.gl/maps/b8ua8Ahgx6opAxSD8" target="_blank">
+              212040 г.Могилев, пер.1-й Южный, 16-а, оф.4
             </Link>
           </div>
           <div className="flex flex-row gap-4">
             <Image src={mailIcon} alt="icon" height={27} width={27} />
-            <Link href="mailto: ALUmix@gmail.com" target="_blank">
-              ALUmix@gmail.com
+            <Link href="mailto: alumiks@tut.by" target="_blank">
+              alumiks@tut.by
             </Link>
           </div>
           <div className="flex flex-col gap-4">
             <div className="flex flex-row gap-4">
               <Image src={clockIcon} alt="icon" height={27} width={27} />
-              <div className="h-full flex flex-col gap-2">
+              <div className="flex h-full flex-col gap-2">
                 <div>Пн–пт 9:00 – 18:00</div>
                 <div>Сб–вс 9:00 – 16:00</div>
               </div>
