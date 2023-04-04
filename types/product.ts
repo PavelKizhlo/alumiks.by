@@ -10,10 +10,23 @@ export interface ProductGroup {
 export interface ProductItem {
   id: number;
   slug: string;
-  img: string;
+  images: ItemImage[];
   title: string;
+  configurations?: ItemConfig[];
   colors?: Color[];
-  // не доделано
+  price: string;
+}
+
+export interface ItemImage {
+  id: number;
+  src: string;
+}
+
+export interface ItemConfig {
+  id: number;
+  title: string;
+  img: string;
+  description: string;
 }
 
 export interface Color {

@@ -50,7 +50,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   const groupName = context.params?.group;
-  const group = PRODUCTS.find((product) => product.slug === groupName);
+  const group = PRODUCTS.find((currentGroup) => currentGroup.slug === groupName);
 
   return {
     props: { group },
