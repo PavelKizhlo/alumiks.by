@@ -22,7 +22,7 @@ export default function Footer() {
 
   return (
     <footer
-      className={`text-l bg-black  py-10 font-semibold text-white ${openSans.className}`}
+      className={`text-l bg-blue-gray-800 py-10 font-semibold text-white ${openSans.className}`}
     >
       <div className="items-stetch container mx-auto grid grid-cols-3 divide-x-2 divide-solid divide-white">
         <section className="flex h-full flex-col items-center gap-4 pr-12">

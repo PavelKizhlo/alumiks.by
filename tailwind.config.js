@@ -8,7 +8,7 @@ module.exports = withMT({
     extend: {
       colors: {
         'header-color': '#8DA0DF',
-        blured: 'rgba(0, 0, 0, 0.29)',
+        blured: 'rgba(120, 144, 156, 0.8)',
       },
       backgroundImage: {
         headingBlockBG: "url('../public/imgs/heading-block-bg.png')",
