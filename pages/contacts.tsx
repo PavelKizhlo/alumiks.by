@@ -8,12 +8,12 @@ import clockIcon from '@/public/icons/clock-icon-2.svg';
 
 export default function Contacts() {
   return (
-    <article className="container mx-auto flex flex-col items-center gap-12 px-32 py-12 font-heading">
-      <h2 className="heading-h2">Контакты</h2>
+    <section className="container mx-auto flex flex-col items-center gap-12 px-32 py-12 font-heading">
+      <h1 className="heading-h1">Контакты</h1>
       <div className="flex items-center gap-28">
         <div className="flex flex-col gap-6">
-          <section className="flex flex-col gap-2">
-            <h3 className="heading-h3">Наши телефоны</h3>
+          <div className="flex flex-col gap-2">
+            <h2 className="heading-h2">Наши телефоны</h2>
             <div className="flex flex-row gap-4">
               <Image src={phoneIcon} alt="icon" height={27} width={27} />
               <div className="flex h-full flex-col gap-2">
@@ -21,27 +21,27 @@ export default function Contacts() {
                 <Link href="tel:+375296544795">(8029) 654-47-95</Link>
               </div>
             </div>
-          </section>
-          <section className="flex flex-col gap-4">
-            <h3 className="heading-h3">Пишите нам на e-mail</h3>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h2 className="heading-h2">Пишите нам на e-mail</h2>
             <div className="flex flex-row gap-4">
               <Image src={mailIcon} alt="icon" height={27} width={27} />
               <Link href="mailto: alumiks@tut.by" target="_blank">
                 alumiks@tut.by
               </Link>
             </div>
-          </section>
-          <section className="flex flex-col gap-4">
-            <h3 className="heading-h3">Адрес нашего офиса</h3>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h2 className="heading-h2">Адрес нашего офиса</h2>
             <div className="flex flex-row gap-4">
               <Image src={locationIcon} alt="icon" height={27} width={27} />
               <Link href="https://goo.gl/maps/b8ua8Ahgx6opAxSD8" target="_blank">
                 212040 г.Могилев, пер.1-й Южный, 16-а, оф.4
               </Link>
             </div>
-          </section>
-          <section className="flex flex-col gap-4">
-            <h3 className="heading-h3">Время работы</h3>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h2 className="heading-h2">Время работы</h2>
             <div className="flex flex-row gap-4">
               <Image src={clockIcon} alt="icon" height={27} width={27} />
               <div className="flex h-full flex-col gap-2">
@@ -49,7 +49,7 @@ export default function Contacts() {
                 <div>Сб–вс 9:00 – 16:00</div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
         <iframe
           title="map"
@@ -61,6 +61,6 @@ export default function Contacts() {
           referrerPolicy="no-referrer-when-downgrade"
         />
       </div>
-    </article>
+    </section>
   );
 }
