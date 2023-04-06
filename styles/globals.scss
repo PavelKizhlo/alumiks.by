@@ -24,4 +24,9 @@
   .heading-h4 {
     @apply heading-common text-2xl font-normal;
   }
+
+  // LINKS
+  .link-underlined {
+    @apply border-b-2 border-transparent hover:border-current transition-colors duration-300;
+  }
 }

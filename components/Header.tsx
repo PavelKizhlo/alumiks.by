@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import logo from '@/public/logos/logo.svg';
+import logo from '@/public/logos/new-logo.svg';
 
 import { useRouter } from 'next/router';
 import useScrollDirection from '@/utils/useScrollDirection';
@@ -32,15 +32,15 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-10 flex  h-20 w-screen justify-center bg-main-color text-xl font-normal ${
-        scrollDirection === 'down' ? '-top-20' : 'top-0'
+      className={`fixed z-10 flex h-32 w-screen justify-center bg-main-color text-xl ${
+        scrollDirection === 'down' ? '-top-32' : 'top-0'
       } transition-[top] duration-150 ease-linear`}
     >
       <div className="mx-auto flex w-full items-center justify-between px-32">
         <Link href="/">
-          <Image src={logo} alt="logo" />
+          <Image width={170} height={100} src={logo} alt="logo" />
         </Link>
-        <nav className="flex flex-row items-center divide-x-2 divide-solid divide-primary text-white">
+        <nav className="flex flex-row items-center divide-x-2 divide-solid divide-light-accent text-light-shades">
           {NAVIGATION.map((item) =>
             item.path === '/products' ? (
               <Menu open={openMenu} handler={setOpenMenu} key={item.id}>
@@ -78,7 +78,7 @@ export default function Header() {
                 key={item.id}
                 className={`px-6 ${pathname === item.path && 'text-info'}`}
               >
-                <Link className="uppercase" href={item.path}>
+                <Link className="link-underlined uppercase" href={item.path}>
                   {item.title}
                 </Link>
               </div>
