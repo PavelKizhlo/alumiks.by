@@ -15,7 +15,7 @@ function ProductPage({ product }: ProductPageProps) {
     <div
       className={`container mx-auto flex flex-col items-center gap-12  py-12 ${openSans.className}`}
     >
-      <h1 className="w-fit border-b-2 border-header-color px-2 text-4xl font-bold">
+      <h1 className="border-header-color w-fit border-b-2 px-2 text-4xl font-bold">
         {product.title}
       </h1>
       <div className="flex w-full justify-between gap-12">
@@ -26,7 +26,7 @@ function ProductPage({ product }: ProductPageProps) {
         </section>
         <div className="flex w-full flex-col justify-between gap-12">
           <section className="flex flex-col gap-4">
-            <h2 className="text-xl font-medium">{'Конфигурация'.toUpperCase()}</h2>
+            <h2 className="text-xl font-medium uppercase">Конфигурация</h2>
             {product.configurations && (
               <div className="grid grid-cols-3 items-center gap-8">
                 {product.configurations.map((item) => (
@@ -43,7 +43,7 @@ function ProductPage({ product }: ProductPageProps) {
             )}
           </section>
           <section className="flex flex-col gap-4">
-            <h2 className="text-xl font-medium">{'Цветовые решения'.toUpperCase()}</h2>
+            <h2 className="text-xl font-medium uppercase">Цветовые решения</h2>
             {product.colors && (
               <div className="grid grid-cols-4 items-center gap-8">
                 {product.colors.map((item) => (
@@ -62,7 +62,7 @@ function ProductPage({ product }: ProductPageProps) {
             )}
           </section>
           <section className="flex flex-col gap-4">
-            <h2 className="text-xl font-medium">{'Стоимость'.toUpperCase()}</h2>
+            <h2 className="text-xl font-medium uppercase">Стоимость</h2>
             <div className="h-[200px] w-full bg-gray-600">{product.price}</div>
           </section>
         </div>

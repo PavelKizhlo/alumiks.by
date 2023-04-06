@@ -51,7 +51,9 @@ export default function Header() {
                     }`}
                     {...triggers}
                   >
-                    <Link href={item.path}>{item.title.toUpperCase()}</Link>
+                    <Link className="uppercase" href={item.path}>
+                      {item.title}
+                    </Link>
                     <ChevronDownIcon
                       strokeWidth={2.5}
                       className={`h-3.5 w-3.5 transition-transform ${
@@ -76,7 +78,9 @@ export default function Header() {
                 key={item.id}
                 className={`px-6 ${pathname === item.path && 'text-black'}`}
               >
-                <Link href={item.path}>{item.title.toUpperCase()}</Link>
+                <Link className="uppercase" href={item.path}>
+                  {item.title}
+                </Link>
               </div>
             )
           )}

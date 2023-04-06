@@ -7,11 +7,11 @@ function Delivery() {
     <article
       className={`container mx-auto flex flex-col items-center gap-12 px-32 py-12 ${openSans.className}`}
     >
-      <h1 className="w-fit border-b-2 border-header-color px-2 text-4xl font-bold">
+      <h1 className="border-header-color w-fit border-b-2 px-2 text-4xl font-bold">
         Оплата и доставка
       </h1>
       <section className="flex flex-col gap-6">
-        <h2 className="text-xl font-medium">{'Оплата'.toUpperCase()}</h2>
+        <h2 className="text-xl font-medium uppercase">Оплата</h2>
         <div className="flex flex-col gap-4">
           <h3 className="text-lg font-bold">Юридические лица:</h3>
           <p>Безналичный расчет путем перечисления денежных средств на р/с Поставщика.</p>
@@ -53,7 +53,7 @@ function Delivery() {
         </div>
       </section>
       <section className="flex flex-col gap-6">
-        <h2 className="text-xl font-medium">{'Отгрузка'.toUpperCase()}</h2>
+        <h2 className="text-xl font-medium uppercase">Отгрузка</h2>
         <div className="flex flex-col gap-2">
           <p>Выписка документов и отгрузка товара производятся в одном месте.</p>
           <p>
@@ -63,7 +63,7 @@ function Delivery() {
         </div>
       </section>
       <section className="flex w-full flex-col gap-6">
-        <h2 className="text-xl font-medium">{'Доставка'.toUpperCase()}</h2>
+        <h2 className="text-xl font-medium uppercase">Доставка</h2>
         <ul className="flex flex-col gap-2">
           <li> - Самовывоз;</li>
           <li>

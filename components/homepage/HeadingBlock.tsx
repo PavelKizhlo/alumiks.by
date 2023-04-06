@@ -12,12 +12,13 @@ function HeadingBlock() {
       <Image src={bgImg} alt="background" className="h-auto w-full" />
       <div className="container absolute top-0 mx-auto flex h-full w-full flex-col items-center justify-between  pb-12 pt-32">
         <h1
-          className={`text-5xl font-bold leading-tight text-white drop-shadow-md ${raleway.className}`}
+          className={`text-5xl font-bold uppercase leading-tight text-white drop-shadow-md ${raleway.className}`}
         >
-          {'наша компания является производителем металлоизделий из тонколистовой оцинкованной стали'.toUpperCase()}
+          наша компания является производителем металлоизделий из тонколистовой
+          оцинкованной стали
         </h1>
-        <Button className="font-inherit bg-header-color hover:shadow-indigo-300">
-          {'заказать звонок'.toUpperCase()}
+        <Button className="font-inherit bg-header-color uppercase hover:shadow-indigo-300">
+          заказать звонок
         </Button>
       </div>
     </section>

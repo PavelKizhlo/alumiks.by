@@ -15,19 +15,21 @@ export default function Products({ products }: Props) {
     <div
       className={`container mx-auto flex flex-col items-center gap-12  py-12 ${openSans.className}`}
     >
-      <h1 className="w-fit border-b-2 border-header-color px-2 text-4xl font-bold">
+      <h1 className="border-header-color w-fit border-b-2 px-2 text-4xl font-bold">
         Каталог
       </h1>
       {products.map((group) => (
         <section key={group.id} className="flex flex-col items-center gap-6">
           <h3 className="text-xl font-medium">
-            <Link href={`/products/${group.slug}`}>{group.title.toUpperCase()}</Link>
+            <Link className="uppercase" href={`/products/${group.slug}`}>
+              {group.title}
+            </Link>
           </h3>
           <div className="flex flex-row gap-10">
             {group.items.slice(0, 3).map((item) => (
               <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
                 <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">
-                  <div className="absolute bottom-0 flex w-full items-center justify-center rounded-b-xl bg-blured py-4 text-center text-white">
+                  <div className="bg-blured absolute bottom-0 flex w-full items-center justify-center rounded-b-xl py-4 text-center text-white">
                     <h4 className="w-fit border-b-2 border-white">{item.title}</h4>
                   </div>
                 </Card>
