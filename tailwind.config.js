@@ -7,8 +7,18 @@ module.exports = withMT({
   theme: {
     extend: {
       colors: {
-        'header-color': '#8DA0DF',
-        blured: 'rgba(120, 144, 156, 0.8)',
+        // MAIN PALETTE
+        'light-shades': '#F6F6F3', // Use this color as the background for your dark-on-light designs, or the text color of an inverted design.
+        'light-accent': '#7F949D', // Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.
+        'main-color': '#95A9B6', // This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.
+        'dark-accent': '#7C8C9A', // Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.
+        'dark-shades': '#244C5E', // Use as the text color for dark-on-light designs, or as the background for inverted designs.
+        // FUNCTIONAL COLORS
+        primary: '#95A9B6',
+        info: '#244C5E',
+        success: '#62AD6F',
+        warning: '#DF9D37',
+        danger: '#F44336',
       },
       backgroundImage: {
         headingBlockBG: "url('../public/imgs/heading-block-bg.png')",
