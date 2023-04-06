@@ -9,9 +9,9 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="app-wrapper">
+    <div className="flex h-screen flex-col">
       <Header />
-      <main className='pt-20'>{children}</main>
+      <main className="grow pt-20">{children}</main>
       <Footer />
     </div>
   );
