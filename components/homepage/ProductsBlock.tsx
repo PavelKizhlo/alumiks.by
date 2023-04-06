@@ -1,5 +1,5 @@
 import React from 'react';
-import { openSans } from '@/utils/fonts';
+
 import { ProductGroup } from '@/types/product';
 import Slider from '@/components/homepage/Slider';
 
@@ -9,10 +9,8 @@ interface ProductsBlockProps {
 
 function ProductsBlock({ products }: ProductsBlockProps) {
   return (
-    <section
-      className={`container mx-auto flex flex-col items-center gap-10 pb-20 ${openSans.className}`}
-    >
-      <h2 className="border-b-2 border-header-color px-2 text-4xl font-bold text-blue-gray-700">
+    <section className="container mx-auto flex flex-col items-center gap-10 pb-20 font-heading">
+      <h2 className="border-header-color border-b-2 px-2 text-4xl font-bold text-blue-gray-700">
         Производим
       </h2>
       {products

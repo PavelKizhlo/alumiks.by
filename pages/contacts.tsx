@@ -6,14 +6,10 @@ import mailIcon from '@/public/icons/mail-icon-2.svg';
 import locationIcon from '@/public/icons/location-icon-2.svg';
 import clockIcon from '@/public/icons/clock-icon-2.svg';
 
-import { openSans } from '@/utils/fonts';
-
 export default function Contacts() {
   return (
-    <article
-      className={`container mx-auto flex flex-col items-center gap-12 px-32 py-12 ${openSans.className}`}
-    >
-      <h2 className="w-fit border-b-2 border-header-color px-2 text-4xl font-bold">
+    <article className="container mx-auto flex flex-col items-center gap-12 px-32 py-12 font-heading">
+      <h2 className="border-header-color w-fit border-b-2 px-2 text-4xl font-bold">
         Контакты
       </h2>
       <div className="flex items-center gap-28">

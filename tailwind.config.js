@@ -13,6 +13,10 @@ module.exports = withMT({
       backgroundImage: {
         headingBlockBG: "url('../public/imgs/heading-block-bg.png')",
       },
+      fontFamily: {
+        heading: ['var(--font--open-sans)'],
+        typo: ['var(--font-raleway)'],
+      },
     },
   },
   plugins: [],

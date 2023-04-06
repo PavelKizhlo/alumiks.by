@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { openSans } from '@/utils/fonts';
 import { Advantage } from '@/types/advantage';
 import { Material } from '@/types/material';
 
@@ -11,9 +10,7 @@ interface AdvantagesBlockProps {
 
 function AdvantagesBlock({ advantages, materials }: AdvantagesBlockProps) {
   return (
-    <section
-      className={`container mx-auto mb-20 flex flex-col gap-12  pt-20 ${openSans.className}`}
-    >
+    <section className="container mx-auto mb-20 flex flex-col gap-12  pt-20 font-heading">
       <div className="flex flex-col items-center gap-8">
         <h2 className="border-header-color border-b-2 px-2 text-4xl font-bold">
           Преимущества нашей компании

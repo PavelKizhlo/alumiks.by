@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Card } from '@material-tailwind/react';
-import { openSans } from '@/utils/fonts';
+
 import { ProductItem } from '@/types/product';
 import PRODUCTS from '@/data/products';
 import { GetStaticPropsContext } from 'next';
@@ -12,9 +12,7 @@ interface ProductPageProps {
 
 function ProductPage({ product }: ProductPageProps) {
   return (
-    <div
-      className={`container mx-auto flex flex-col items-center gap-12  py-12 ${openSans.className}`}
-    >
+    <div className="container mx-auto flex flex-col items-center gap-12  py-12 font-heading">
       <h1 className="border-header-color w-fit border-b-2 px-2 text-4xl font-bold">
         {product.title}
       </h1>

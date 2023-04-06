@@ -6,8 +6,6 @@ import mailIcon from '@/public/icons/mail-icon.svg';
 import locationIcon from '@/public/icons/location-icon.svg';
 import clockIcon from '@/public/icons/clock-icon.svg';
 
-import { openSans } from '@/utils/fonts';
-
 export default function Footer() {
   const CATALOG_ITEMS = [
     { id: 1, title: 'Водосточные системы' },

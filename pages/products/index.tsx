@@ -2,7 +2,6 @@ import { Card } from '@material-tailwind/react';
 
 import Link from 'next/link';
 
-import { openSans } from '@/utils/fonts';
 import PRODUCTS from '@/data/products';
 import { ProductGroup } from '@/types/product';
 
@@ -12,9 +11,7 @@ interface Props {
 
 export default function Products({ products }: Props) {
   return (
-    <div
-      className={`container mx-auto flex flex-col items-center gap-12  py-12 ${openSans.className}`}
-    >
+    <div className="container mx-auto flex flex-col items-center gap-12  py-12 font-heading">
       <h1 className="border-header-color w-fit border-b-2 px-2 text-4xl font-bold">
         Каталог
       </h1>

@@ -1,12 +1,8 @@
 import React from 'react';
 
-import { openSans } from '../utils/fonts';
-
 function Delivery() {
   return (
-    <article
-      className={`container mx-auto flex flex-col items-center gap-12 px-32 py-12 ${openSans.className}`}
-    >
+    <article className="container mx-auto flex flex-col items-center gap-12 px-32 py-12 font-heading">
       <h1 className="border-header-color w-fit border-b-2 px-2 text-4xl font-bold">
         Оплата и доставка
       </h1>
