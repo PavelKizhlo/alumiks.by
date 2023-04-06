@@ -10,7 +10,7 @@ function HeadingBlock() {
     <section className="relative flex h-fit flex-col items-center bg-headingBlockBG bg-contain bg-no-repeat">
       <Image src={bgImg} alt="background" className="h-auto w-full" />
       <div className="container absolute top-0 mx-auto flex h-full w-full flex-col items-center justify-between  pb-12 pt-32">
-        <h1 className="page-header font-heading">
+        <h1 className="heading-h1">
           наша компания является производителем металлоизделий из тонколистовой
           оцинкованной стали
         </h1>

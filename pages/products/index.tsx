@@ -12,12 +12,10 @@ interface Props {
 export default function Products({ products }: Props) {
   return (
     <div className="container mx-auto flex flex-col items-center gap-12  py-12 font-heading">
-      <h1 className="border-header-color w-fit border-b-2 px-2 text-4xl font-bold">
-        Каталог
-      </h1>
+      <h1 className="heading-h1">Каталог</h1>
       {products.map((group) => (
         <section key={group.id} className="flex flex-col items-center gap-6">
-          <h3 className="text-xl font-medium">
+          <h3 className="heading-h3">
             <Link className="uppercase" href={`/products/${group.slug}`}>
               {group.title}
             </Link>
@@ -27,7 +25,7 @@ export default function Products({ products }: Props) {
               <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
                 <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">
                   <div className="bg-blured absolute bottom-0 flex w-full items-center justify-center rounded-b-xl py-4 text-center text-white">
-                    <h4 className="w-fit border-b-2 border-white">{item.title}</h4>
+                    <h4 className="heading-h4">{item.title}</h4>
                   </div>
                 </Card>
               </Link>

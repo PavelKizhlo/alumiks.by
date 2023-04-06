@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  // HEADINGS
+
+  .heading-common {
+    @apply first-letter:uppercase leading-tight font-heading;
+  }
+
+  .heading-h1 {
+    @apply heading-common text-5xl font-bold;
+  }
+
+  .heading-h2 {
+    @apply heading-common text-4xl font-semibold;
+  }
+
+  .heading-h3 {
+    @apply heading-common text-3xl font-medium;
+  }
+
+  .heading-h4 {
+    @apply heading-common text-2xl font-normal;
+  }
+}

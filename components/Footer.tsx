@@ -19,12 +19,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer
-      className={`text-l bg-blue-gray-800 py-10 font-semibold text-white ${openSans.className}`}
-    >
+    <footer className="text-l bg-dark-shades py-10 font-heading font-semibold text-light-shades">
       <div className="items-stetch container mx-auto grid grid-cols-3 divide-x-2 divide-solid divide-white">
         <section className="flex h-full flex-col items-center gap-4 pr-12">
-          <h3 className="text-xl">
+          <h3 className="heading-h3">
             <Link href="/products">Каталог</Link>
           </h3>
           <ul className="flex flex-col gap-2">
@@ -36,7 +34,7 @@ export default function Footer() {
           </ul>
         </section>
         <section className="flex h-full flex-col items-start gap-4 px-12">
-          <h3 className="self-center text-xl">
+          <h3 className="heading-h3 self-center">
             <Link href="/contacts">Контакты</Link>
           </h3>
           <div className="flex flex-row gap-4">
@@ -69,7 +67,7 @@ export default function Footer() {
           </div>
         </section>
         <section className="flex h-full flex-col items-center gap-4 pl-12">
-          <h3 className="text-xl">Правовая информация</h3>
+          <h3 className="heading-h3">Правовая информация</h3>
           <div className="flex h-full flex-col justify-between">
             <p>
               Все права на материалы сайта принадлежат правообладателю компании “АЛЮМИКС”.

@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-10 flex  h-20 w-screen justify-center bg-header-color  text-xl font-normal ${
+      className={`fixed z-10 flex  h-20 w-screen justify-center bg-main-color text-xl font-normal ${
         scrollDirection === 'down' ? '-top-20' : 'top-0'
       } transition-[top] duration-150 ease-linear`}
     >
@@ -40,14 +40,14 @@ export default function Header() {
         <Link href="/">
           <Image src={logo} alt="logo" />
         </Link>
-        <nav className="flex flex-row items-center divide-x-2 divide-solid divide-white text-white">
+        <nav className="flex flex-row items-center divide-x-2 divide-solid divide-primary text-white">
           {NAVIGATION.map((item) =>
             item.path === '/products' ? (
               <Menu open={openMenu} handler={setOpenMenu} key={item.id}>
                 <MenuHandler>
                   <div
                     className={`flex items-center gap-2 px-6 ${
-                      pathname === item.path && 'text-black'
+                      pathname === item.path && 'text-info'
                     }`}
                     {...triggers}
                   >
@@ -76,7 +76,7 @@ export default function Header() {
             ) : (
               <div
                 key={item.id}
-                className={`px-6 ${pathname === item.path && 'text-black'}`}
+                className={`px-6 ${pathname === item.path && 'text-info'}`}
               >
                 <Link className="uppercase" href={item.path}>
                   {item.title}

@@ -1,21 +1,21 @@
 import React from 'react';
-import { Open_Sans, Raleway } from 'next/font/google';
+import { Roboto_Slab, Roboto } from 'next/font/google';
 
 import Footer from './Footer';
 import Header from './Header';
 
-export const openSans = Open_Sans({
+export const headingFont = Roboto_Slab({
   subsets: ['cyrillic'],
-  weight: ['600', '500', '400', '300'],
+  weight: ['700', '600', '500', '400', '300', '200'],
   display: 'swap',
-  variable: '--font-open-sans',
+  variable: '--font-heading-custom',
 });
 
-export const raleway = Raleway({
+export const typoFont = Roboto({
   subsets: ['cyrillic'],
-  weight: ['400'],
+  weight: ['500', '400', '300', '100'],
   display: 'swap',
-  variable: '--font-raleway',
+  variable: '--font-typo-custom',
 });
 
 interface LayoutProps {
@@ -24,7 +24,9 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className={`flex h-screen flex-col ${openSans.variable} ${raleway.variable}`}>
+    <div
+      className={`flex h-screen flex-col ${headingFont.variable} ${typoFont.variable}`}
+    >
       <Header />
       <main className="grow pt-20">{children}</main>
       <Footer />

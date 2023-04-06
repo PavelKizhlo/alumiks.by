@@ -24,8 +24,8 @@ module.exports = withMT({
         headingBlockBG: "url('../public/imgs/heading-block-bg.png')",
       },
       fontFamily: {
-        heading: ['var(--font--open-sans)'],
-        typo: ['var(--font-raleway)'],
+        heading: ['var(--font-heading-custom)'],
+        typo: ['var(--font-typo-custom)'],
       },
     },
   },
