@@ -2,9 +2,9 @@ import React from 'react';
 
 function Delivery() {
   return (
-    <article className="container mx-auto flex flex-col items-center gap-12 px-32 py-12 font-heading">
+    <section className="container flex flex-col items-center gap-12 py-12">
       <h1 className="heading-h1">Оплата и доставка</h1>
-      <section className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6">
         <h2 className="heading-h2">Оплата</h2>
         <div className="flex flex-col gap-4">
           <h3 className="heading-h3">Юридические лица:</h3>
@@ -45,8 +45,8 @@ function Delivery() {
           </h3>
           <div>Фото чека</div>
         </div>
-      </section>
-      <section className="flex flex-col gap-6">
+      </div>
+      <div className="flex flex-col gap-6">
         <h2 className="heading-h2">Отгрузка</h2>
         <div className="flex flex-col gap-2">
           <p>Выписка документов и отгрузка товара производятся в одном месте.</p>
@@ -55,8 +55,8 @@ function Delivery() {
             г.Могилев, пер.1-й Южный, д.16-а в рабочие дни с 9-00 до 17-00.
           </p>
         </div>
-      </section>
-      <section className="flex w-full flex-col gap-6">
+      </div>
+      <div className="flex w-full flex-col gap-6">
         <h2 className="heading-h2">Доставка</h2>
         <ul className="flex flex-col gap-2">
           <li> - Самовывоз;</li>
@@ -66,8 +66,8 @@ function Delivery() {
           </li>
           <li>- Возможна бесплатная доставка в зависимости от суммы заказа.</li>
         </ul>
-      </section>
-    </article>
+      </div>
+    </section>
   );
 }
 

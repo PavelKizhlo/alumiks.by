@@ -12,7 +12,7 @@ interface ProductPageProps {
 
 function ProductPage({ product }: ProductPageProps) {
   return (
-    <div className="container mx-auto flex flex-col items-center gap-12  py-12 font-heading">
+    <div className="container flex flex-col items-center gap-12  py-12">
       <h1 className="heading-h1">{product.title}</h1>
       <div className="flex w-full justify-between gap-12">
         <section className="h-[700px] w-[400px] bg-gray-600">

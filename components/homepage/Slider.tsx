@@ -25,7 +25,7 @@ export default function Slider({ group }: SliderProps) {
   return (
     <>
       <Link className="" href={`/products/${group.slug}`}>
-        <h3 className="heading-h3">{group.title}</h3>
+        <h3 className="heading-h3 text-dark-shades">{group.title}</h3>
       </Link>
 
       <div ref={sliderRef} className="keen-slider">
@@ -35,7 +35,7 @@ export default function Slider({ group }: SliderProps) {
             href={`/products/${group.slug}/${item.slug}`}
             className="keen-slider__slide flex justify-center p-3"
           >
-            <Card className="relative h-[480px] w-[360px] justify-center rounded-none drop-shadow-lg transition duration-300 hover:scale-105 hover:[&>img]:grayscale-0">
+            <Card className="relative h-[480px] w-[360px] justify-center overflow-hidden rounded drop-shadow-lg transition duration-300 hover:scale-105 hover:[&>img]:grayscale-0">
               <Image
                 width={320}
                 height={480}
@@ -43,7 +43,7 @@ export default function Slider({ group }: SliderProps) {
                 alt={item.title}
                 className="h-full w-full object-cover grayscale transition duration-300"
               />
-              <div className="bg-blured absolute bottom-0 flex h-[90px] w-full items-center px-4 pr-6">
+              <div className="absolute bottom-0 flex h-[90px] w-full items-center bg-dark-accent-blur px-4 pr-6">
                 <h4 className="heading-h4 text-white">{item.title}</h4>
               </div>
             </Card>

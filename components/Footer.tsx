@@ -6,6 +6,8 @@ import mailIcon from '@/public/icons/mail-icon.svg';
 import locationIcon from '@/public/icons/location-icon.svg';
 import clockIcon from '@/public/icons/clock-icon.svg';
 
+import footerLogo from '@/public/logos/new-logo-invert.svg';
+
 export default function Footer() {
   const CATALOG_ITEMS = [
     { id: 1, title: 'Водосточные системы' },
@@ -19,40 +21,55 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-l bg-dark-shades py-10 font-heading font-semibold text-light-shades">
-      <div className="items-stetch container mx-auto grid grid-cols-3 divide-x-2 divide-solid divide-white">
-        <section className="flex h-full flex-col items-center gap-4 pr-12">
-          <h3 className="heading-h3">
-            <Link href="/products">Каталог</Link>
-          </h3>
+    <footer className="text-l bg-dark-shades py-10 text-light-shades">
+      <div className="items-stetch container grid grid-flow-col divide-x-2 divide-solid divide-white">
+        <section className="footer-text flex h-full flex-col gap-6 pr-12">
+          <Link href="/products">
+            <h3 className="heading-h3">Каталог</h3>
+          </Link>
           <ul className="flex flex-col gap-2">
             {CATALOG_ITEMS.map((item) => (
               <li key={item.id}>
-                <Link href="/">{item.title}</Link>
+                <Link className="link-underlined" href="/">
+                  {item.title}
+                </Link>
               </li>
             ))}
           </ul>
         </section>
-        <section className="flex h-full flex-col items-start gap-4 px-12">
-          <h3 className="heading-h3 self-center">
-            <Link href="/contacts">Контакты</Link>
-          </h3>
+        <section className="footer-text flex h-full flex-col gap-6 px-12">
+          <Link href="/contacts">
+            <h3 className="heading-h3">Контакты</h3>
+          </Link>
+
           <div className="flex flex-row gap-4">
             <Image src={phoneIcon} alt="icon" height={27} width={27} />
             <div className="flex h-full flex-col gap-2">
-              <Link href="tel:80222634197">(80222) 63-41-97 (тел/факс)</Link>
-              <Link href="tel:+375296544795">(8029) 654-47-95</Link>
+              <Link className="link-underlined" href="tel:+375296544795">
+                +375 (29) 654-47-95
+              </Link>
+              <Link className="link-underlined" href="tel:80222634197">
+                8 (0222) 63-41-97 (тел/факс)
+              </Link>
             </div>
           </div>
           <div className="flex flex-row gap-4">
             <Image src={locationIcon} alt="icon" height={27} width={27} />
-            <Link href="https://goo.gl/maps/b8ua8Ahgx6opAxSD8" target="_blank">
+            <Link
+              className="link-underlined"
+              href="https://goo.gl/maps/b8ua8Ahgx6opAxSD8"
+              target="_blank"
+            >
               212040 г.Могилев, пер.1-й Южный, 16-а, оф.4
             </Link>
           </div>
           <div className="flex flex-row gap-4">
             <Image src={mailIcon} alt="icon" height={27} width={27} />
-            <Link href="mailto: alumiks@tut.by" target="_blank">
+            <Link
+              className="link-underlined"
+              href="mailto: alumiks@tut.by"
+              target="_blank"
+            >
               alumiks@tut.by
             </Link>
           </div>
@@ -66,7 +83,7 @@ export default function Footer() {
             </div>
           </div>
         </section>
-        <section className="flex h-full flex-col items-center gap-4 pl-12">
+        <section className="footer-text flex h-full flex-col gap-6 pl-12">
           <h3 className="heading-h3">Правовая информация</h3>
           <div className="flex h-full flex-col justify-between">
             <p>
@@ -75,6 +92,13 @@ export default function Footer() {
               письменного разрешения правообладателя Сайта
             </p>
             <p>2016–2023 Все права защищены</p>
+            <Image
+              className="self-end"
+              width={170}
+              height={100}
+              src={footerLogo}
+              alt="Логотип алюмикс"
+            />
           </div>
         </section>
       </div>

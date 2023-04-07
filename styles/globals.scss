@@ -10,23 +10,28 @@
   }
 
   .heading-h1 {
-    @apply heading-common text-5xl font-bold;
+    @apply heading-common text-5xl font-medium;
   }
 
   .heading-h2 {
-    @apply heading-common text-4xl font-semibold;
+    @apply heading-common text-4xl font-normal;
   }
 
   .heading-h3 {
-    @apply heading-common text-3xl font-medium;
+    @apply heading-common text-3xl font-light;
   }
 
   .heading-h4 {
-    @apply heading-common text-2xl font-normal;
+    @apply heading-common text-2xl font-extralight;
   }
 
   // LINKS
   .link-underlined {
     @apply border-b-2 border-transparent hover:border-current transition-colors duration-300;
+  }
+
+  // TYPOGRAPHY
+  .footer-text {
+    @apply font-light text-base;
   }
 }

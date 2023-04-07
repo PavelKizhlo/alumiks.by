@@ -7,6 +7,7 @@ import ADVANTAGES from '@/data/advantages';
 import { ProductGroup } from '@/types/product';
 import { Material } from '@/types/material';
 import { Advantage } from '@/types/advantage';
+import MaterialsBlock from '@/components/homepage/MaterialsBlock';
 
 interface HomeProps {
   products: ProductGroup[];
@@ -18,7 +19,8 @@ export default function Home({ products, advantages, materials }: HomeProps) {
   return (
     <>
       <HeadingBlock />
-      <AdvantagesBlock advantages={advantages} materials={materials} />
+      <AdvantagesBlock advantages={advantages} />
+      <MaterialsBlock materials={materials} />
       <ProductsBlock products={products} />
     </>
   );

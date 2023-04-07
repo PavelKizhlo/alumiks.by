@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-10 flex h-32 w-screen justify-center bg-main-color text-xl ${
+      className={`fixed z-10 flex h-32 w-screen justify-center bg-main-color font-typo text-xl font-normal ${
         scrollDirection === 'down' ? '-top-32' : 'top-0'
       } transition-[top] duration-150 ease-linear`}
     >

@@ -8,7 +8,7 @@ import clockIcon from '@/public/icons/clock-icon-2.svg';
 
 export default function Contacts() {
   return (
-    <section className="container mx-auto flex flex-col items-center gap-12 px-32 py-12 font-heading">
+    <section className="container flex flex-col items-center gap-12 py-12">
       <h1 className="heading-h1">Контакты</h1>
       <div className="flex items-center gap-28">
         <div className="flex flex-col gap-6">

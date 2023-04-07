@@ -5,7 +5,19 @@ const withMT = require('@material-tailwind/react/utils/withMT');
 module.exports = withMT({
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: '1.5rem',
+    },
     extend: {
+      screens: {
+        sm: '640px', // => @media (min-width: 640px) { ... }
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+        '3xl': '1680px',
+      },
       colors: {
         // MAIN PALETTE
         'light-shades': '#F6F6F3', // Use this color as the background for your dark-on-light designs, or the text color of an inverted design.
@@ -13,6 +25,7 @@ module.exports = withMT({
         'main-color': '#95A9B6', // This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.
         'dark-accent': '#7C8C9A', // Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.
         'dark-shades': '#244C5E', // Use as the text color for dark-on-light designs, or as the background for inverted designs.
+        'dark-accent-blur': 'rgba(124, 140, 154, 0.8)',
         // FUNCTIONAL COLORS
         primary: '#95A9B6',
         info: '#244C5E',

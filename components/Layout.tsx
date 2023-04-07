@@ -6,7 +6,7 @@ import Header from './Header';
 
 export const headingFont = Roboto_Slab({
   subsets: ['cyrillic'],
-  weight: ['700', '600', '500', '400', '300', '200'],
+  weight: ['700', '600', '500', '400', '300', '200', '100'],
   display: 'swap',
   variable: '--font-heading-custom',
 });
@@ -28,7 +28,7 @@ export default function Layout({ children }: LayoutProps) {
       className={`flex h-screen flex-col ${headingFont.variable} ${typoFont.variable}`}
     >
       <Header />
-      <main className="grow pt-20">{children}</main>
+      <main className="grow pt-20 font-typo">{children}</main>
       <Footer />
     </div>
   );
