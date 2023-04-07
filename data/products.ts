@@ -111,7 +111,7 @@ const PRODUCTS: ProductGroup[] = [
         id: 1.4,
         slug: 'nashсelniki',
         images: [{ id: 1, src: '/products/nashhelnik.jpeg' }],
-        title: 'Нащельники и декоративные элементы для сэндвичпанелей',
+        title: 'Нащельники и декоративные элементы',
         colors: ocinkovannayaStalColors,
         configurations: [
           {
