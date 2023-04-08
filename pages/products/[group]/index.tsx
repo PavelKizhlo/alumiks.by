@@ -13,7 +13,7 @@ interface ProductCategoryPageProps {
 
 function ProductCategoryPage({ group }: ProductCategoryPageProps) {
   return (
-    <article className="container flex flex-col items-center gap-12  py-12">
+    <section className="page-wrapper">
       <h1 className="heading-h1">{group.title}</h1>
       <div className="h-[250px] w-full bg-gray-700 text-center">Изображение</div>
       <p className="text-lg">{group.description}</p>
@@ -28,7 +28,7 @@ function ProductCategoryPage({ group }: ProductCategoryPageProps) {
           </Link>
         ))}
       </section>
-    </article>
+    </section>
   );
 }
 

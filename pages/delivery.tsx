@@ -2,9 +2,9 @@ import React from 'react';
 
 function Delivery() {
   return (
-    <section className="container flex flex-col items-center gap-12 py-12">
+    <section className="page-wrapper">
       <h1 className="heading-h1">Оплата и доставка</h1>
-      <div className="flex flex-col gap-6">
+      <div className="flex w-full flex-col gap-6">
         <h2 className="heading-h2">Оплата</h2>
         <div className="flex flex-col gap-4">
           <h3 className="heading-h3">Юридические лица:</h3>
@@ -46,7 +46,7 @@ function Delivery() {
           <div>Фото чека</div>
         </div>
       </div>
-      <div className="flex flex-col gap-6">
+      <div className="flex w-full flex-col gap-6">
         <h2 className="heading-h2">Отгрузка</h2>
         <div className="flex flex-col gap-2">
           <p>Выписка документов и отгрузка товара производятся в одном месте.</p>
