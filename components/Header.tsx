@@ -11,6 +11,10 @@ import { Menu, MenuHandler, MenuList } from '@material-tailwind/react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import PRODUCTS from '../data/products';
 
+/**
+ * TODO: возможно, подправить стили выпадающего меню
+ */
+
 export default function Header() {
   const NAVIGATION = [
     { id: 1, title: 'Главная', path: '/' },
@@ -27,7 +31,7 @@ export default function Header() {
 
   const triggers = {
     onMouseEnter: () => setOpenMenu(true),
-    onMouseLeave: () => setOpenMenu(true),
+    onMouseLeave: () => setOpenMenu(false),
   };
 
   return (
@@ -36,7 +40,7 @@ export default function Header() {
         scrollDirection === 'down' ? '-top-32' : 'top-0'
       } transition-[top] duration-150 ease-linear`}
     >
-      <div className="mx-auto flex w-full items-center justify-between px-32">
+      <div className="mx-auto flex w-full items-center justify-between px-32 ">
         <Link href="/">
           <Image width={170} height={100} src={logo} alt="logo" />
         </Link>
@@ -64,16 +68,25 @@ export default function Header() {
                 </MenuHandler>
                 <MenuList
                   {...triggers}
-                  className="hidden w-fit gap-3 overflow-visible text-inherit lg:flex"
+                  className="hidden w-fit gap-4 overflow-visible border-dark-accent bg-dark-accent text-inherit lg:flex"
                 >
                   {PRODUCTS.map((el) => (
-                    <div key={el.id} className="w-fit max-w-[200px]">
-                      <Link href={`/products/${el.slug}`}>{el.title}</Link>
-                      <div className="flex flex-col">
+                    <div
+                      key={el.id}
+                      className="flex w-fit max-w-[200px] flex-col gap-2 divide-y-2 divide-solid divide-dark-shades"
+                    >
+                      <Link
+                        href={`/products/${el.slug}`}
+                        className="flex h-[40px] items-center justify-center text-center font-bold text-dark-shades transition-colors duration-300 hover:text-black"
+                      >
+                        {el.shortTitle}
+                      </Link>
+                      <div className="flex flex-col gap-1 pt-2 ">
                         {el.items.map((itemEl) => (
                           <Link
                             key={itemEl.id}
                             href={`/products/${el.slug}/${itemEl.slug}`}
+                            className="link-underlined w-fit"
                           >
                             {itemEl.title}
                           </Link>

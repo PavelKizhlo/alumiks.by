@@ -11,6 +11,7 @@ const PRODUCTS: ProductGroup[] = [
     id: 1,
     slug: 'ocinkovannaya-stal',
     title: 'Фасонные изделия из оцинкованной стали с полимерным покрытием',
+    shortTitle: 'Фасонные изделия из оцинкованной стали',
     headingImg: '',
     description: '',
     items: [
@@ -189,6 +190,7 @@ const PRODUCTS: ProductGroup[] = [
     id: 2,
     slug: 'izdeliya-iz-aluminiya',
     title: 'Изделия из алюминия',
+    shortTitle: 'Изделия из алюминия',
     headingImg: '',
     description: '',
     items: [
@@ -243,6 +245,7 @@ const PRODUCTS: ProductGroup[] = [
     id: 3,
     slug: 'podokonniki',
     title: 'Пластиковые подоконники',
+    shortTitle: 'Пластиковые подоконники',
     headingImg: '',
     description: '',
     items: [
@@ -269,6 +272,7 @@ const PRODUCTS: ProductGroup[] = [
     id: 4,
     slug: 'zabory',
     title: 'Заборы',
+    shortTitle: 'Заборы',
     headingImg: '',
     description: '',
     items: [
