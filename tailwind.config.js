@@ -9,12 +9,12 @@ module.exports = withMT({
       center: true,
       padding: {
         DEFAULT: '1rem',
-        sm: '1.5rem',
-        md: '1.7rem',
-        lg: '2rem',
-        xl: '3rem',
-        '2xl': '3.2rem',
-        '3xl': '3.5rem',
+        sm: '2rem',
+        md: '2.5rem',
+        lg: '3rem',
+        xl: '4rem',
+        '2xl': '5rem',
+        '3xl': '6rem',
       },
     },
     extend: {
@@ -24,7 +24,7 @@ module.exports = withMT({
         lg: '1024px',
         xl: '1280px',
         '2xl': '1536px',
-        '3xl': '1680px',
+        '3xl': '1690px',
       },
       colors: {
         // MAIN PALETTE
