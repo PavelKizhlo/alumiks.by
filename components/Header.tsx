@@ -27,7 +27,7 @@ export default function Header() {
 
   const triggers = {
     onMouseEnter: () => setOpenMenu(true),
-    onMouseLeave: () => setOpenMenu(false),
+    onMouseLeave: () => setOpenMenu(true),
   };
 
   return (
@@ -64,11 +64,21 @@ export default function Header() {
                 </MenuHandler>
                 <MenuList
                   {...triggers}
-                  className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible text-inherit lg:grid"
+                  className="hidden w-fit gap-3 overflow-visible text-inherit lg:flex"
                 >
                   {PRODUCTS.map((el) => (
-                    <div key={el.id}>
-                      <Link href="/">{el.title}</Link>
+                    <div key={el.id} className="w-fit max-w-[200px]">
+                      <Link href={`/products/${el.slug}`}>{el.title}</Link>
+                      <div className="flex flex-col">
+                        {el.items.map((itemEl) => (
+                          <Link
+                            key={itemEl.id}
+                            href={`/products/${el.slug}/${itemEl.slug}`}
+                          >
+                            {itemEl.title}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </MenuList>
