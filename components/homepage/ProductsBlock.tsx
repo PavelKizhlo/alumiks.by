@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ProductGroup } from '@/types/product';
 import Slider from '@/components/homepage/Slider';
+import Link from 'next/link';
 
 interface ProductsBlockProps {
   products: ProductGroup[];
@@ -15,7 +16,13 @@ function ProductsBlock({ products }: ProductsBlockProps) {
         {products
           .sort((a, b) => b.items.length - a.items.length)
           .map((group) => (
-            <Slider group={group} key={group.id} />
+            <>
+              <Link className="" href={`/products/${group.slug}`}>
+                <h3 className="heading-h3 text-center text-dark-shades">{group.title}</h3>
+              </Link>
+
+              <Slider group={group} key={group.id} />
+            </>
           ))}
       </div>
     </section>
