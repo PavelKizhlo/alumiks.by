@@ -41,9 +41,6 @@ module.exports = withMT({
         warning: '#DF9D37',
         danger: '#F44336',
       },
-      backgroundImage: {
-        headingBlockBG: "url('../public/imgs/heading-block-bg.png')",
-      },
       fontFamily: {
         heading: ['var(--font-heading-custom)'],
         typo: ['var(--font-typo-custom)'],

@@ -2,6 +2,7 @@ export interface ProductGroup {
   id: number;
   slug: string;
   title: string;
+  shortTitle: string;
   headingImg: string;
   description: string;
   items: ProductItem[];

@@ -11,7 +11,7 @@ interface Props {
 
 export default function Products({ products }: Props) {
   return (
-    <div className="container flex flex-col items-center gap-12  py-12">
+    <section className="page-wrapper">
       <h1 className="heading-h1">Каталог</h1>
       {products.map((group) => (
         <section key={group.id} className="flex flex-col items-center gap-6">
@@ -38,7 +38,7 @@ export default function Products({ products }: Props) {
           </div>
         </section>
       ))}
-    </div>
+    </section>
   );
 }
 
