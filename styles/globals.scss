@@ -42,6 +42,6 @@
 
   // COMMON PAGE WRAPPER STYLES
   .page-wrapper {
-    @apply container flex min-h-full flex-col items-center gap-12 bg-light-shades pb-14 pt-20;
+    @apply container flex flex-col items-center gap-12 pb-14 pt-20;
   }
 }

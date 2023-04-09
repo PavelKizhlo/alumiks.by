@@ -68,16 +68,16 @@ export default function Header() {
                 </MenuHandler>
                 <MenuList
                   {...triggers}
-                  className="hidden w-fit gap-4 overflow-visible border-dark-accent bg-dark-accent text-inherit lg:flex"
+                  className="hidden w-fit gap-4 overflow-visible border-dark-accent bg-dark-accent font-light text-inherit lg:flex"
                 >
                   {PRODUCTS.map((el) => (
                     <div
                       key={el.id}
-                      className="flex w-fit max-w-[200px] flex-col gap-2 divide-y-2 divide-solid divide-dark-shades"
+                      className="flex w-fit max-w-[200px] flex-col gap-2 divide-y-2 divide-solid divide-dark-shades text-light-shades"
                     >
                       <Link
                         href={`/products/${el.slug}`}
-                        className="flex h-[40px] items-center justify-center text-center font-bold text-dark-shades transition-colors duration-300 hover:text-black"
+                        className="flex h-[40px] items-center justify-center text-center text-lg transition-colors duration-300 hover:text-dark-shades "
                       >
                         {el.shortTitle}
                       </Link>
@@ -86,7 +86,7 @@ export default function Header() {
                           <Link
                             key={itemEl.id}
                             href={`/products/${el.slug}/${itemEl.slug}`}
-                            className="link-underlined w-fit"
+                            className="link-underlined w-fit text-base"
                           >
                             {itemEl.title}
                           </Link>

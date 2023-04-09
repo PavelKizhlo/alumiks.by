@@ -13,21 +13,23 @@ interface ProductCategoryPageProps {
 
 function ProductCategoryPage({ group }: ProductCategoryPageProps) {
   return (
-    <section className="page-wrapper">
-      <h1 className="heading-h1">{group.title}</h1>
-      <div className="h-[250px] w-full bg-gray-700 text-center">Изображение</div>
-      <p className="text-lg">{group.description}</p>
-      <section className="grid grid-cols-4 gap-4">
-        {group.items.map((item) => (
-          <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
-            <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">
-              <div className="bg-blured absolute bottom-0 flex w-full items-center justify-center rounded-b-xl py-4 text-center text-white">
-                <h4 className="heading-h4">{item.title}</h4>
-              </div>
-            </Card>
-          </Link>
-        ))}
-      </section>
+    <section className="min-h-full bg-light-shades">
+      <div className="page-wrapper">
+        <h1 className="heading-h1">{group.title}</h1>
+        <div className="h-[250px] w-full bg-gray-700 text-center">Изображение</div>
+        <p className="text-lg">{group.description}</p>
+        <div className="grid grid-cols-4 gap-4">
+          {group.items.map((item) => (
+            <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
+              <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">
+                <div className="bg-blured absolute bottom-0 flex w-full items-center justify-center rounded-b-xl py-4 text-center text-white">
+                  <h4 className="heading-h4">{item.title}</h4>
+                </div>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
