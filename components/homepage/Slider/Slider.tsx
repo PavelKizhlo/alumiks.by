@@ -6,6 +6,8 @@ import { ProductGroup } from '@/types/product';
 import { KeenSliderOptions, useKeenSlider } from 'keen-slider/react';
 
 import 'keen-slider/keen-slider.min.css';
+import SliderControlSVG from '@/components/homepage/Slider/SliderControlSVG';
+import SliderCard from '@/components/homepage/Slider/SliderCard';
 
 interface SliderProps {
   group: ProductGroup;
@@ -100,20 +102,7 @@ export default function Slider({ group }: SliderProps) {
             instanceRef.current?.prev();
           }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="h-12 w-12 stroke-warning lg:h-14 lg:w-14"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
-            />
-          </svg>
+          <SliderControlSVG direction="left" />
         </button>
       )}
 
@@ -124,19 +113,7 @@ export default function Slider({ group }: SliderProps) {
             href={`/products/${group.slug}/${item.slug}`}
             className="keen-slider__slide flex justify-center p-1 sm:p-3"
           >
-            <Card className="absative h-[420px] w-[315px] justify-center overflow-hidden rounded drop-shadow-lg transition duration-300 sm:h-[336px] sm:w-[252px] md:h-[420px] md:w-[315px] lg:h-[480px] lg:w-[360px] lg:hover:scale-105 lg:hover:[&>img]:grayscale-0">
-              <Image
-                width={320}
-                height={480}
-                // TODO Write sizes for all tailwind breakpoints
-                src={item.images[0].src}
-                alt={item.title}
-                className="h-full w-full object-cover transition duration-300 lg:grayscale"
-              />
-              <div className="absolute bottom-0 flex h-[90px] w-full items-center bg-dark-accent-blur px-4 pr-6">
-                <h4 className="heading-h4 text-white">{item.title}</h4>
-              </div>
-            </Card>
+            <SliderCard item={item} />
           </Link>
         ))}
       </div>
@@ -150,20 +127,7 @@ export default function Slider({ group }: SliderProps) {
             instanceRef.current?.next();
           }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="h-12 w-12 stroke-warning lg:h-14 lg:w-14"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-            />
-          </svg>
+          <SliderControlSVG direction="right" />
         </button>
       )}
     </div>
