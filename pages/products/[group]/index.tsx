@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Link from 'next/link';
-import { Card } from '@material-tailwind/react';
+import { Breadcrumbs, Card } from '@material-tailwind/react';
 
 import PRODUCTS from '@/data/products';
 import { ProductGroup } from '@/types/product';
@@ -11,14 +11,36 @@ interface ProductCategoryPageProps {
   group: ProductGroup;
 }
 
+// TODO: в строке 23 из-за плагина неправильно перестанавливаются классы
+
 function ProductCategoryPage({ group }: ProductCategoryPageProps) {
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
+        <Breadcrumbs>
+          <Link
+            href="/"
+            className="text-dark-accent opacity-60 transition-colors duration-300 hover:text-dark-shades"
+          >
+            Главная
+          </Link>
+          <Link
+            href="/products"
+            className="text-dark-accent opacity-60 transition-colors duration-300 hover:text-dark-shades"
+          >
+            Каталог
+          </Link>
+          <Link
+            href={`/products/${group.slug}`}
+            className="text-dark-accent transition-colors duration-300 hover:text-dark-shades"
+          >
+            {group.title}
+          </Link>
+        </Breadcrumbs>
         <h1 className="heading-h1">{group.title}</h1>
         <div className="h-[250px] w-full bg-gray-700 text-center">Изображение</div>
         <p className="text-lg">{group.description}</p>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-4 xs:grid-cols-2">
           {group.items.map((item) => (
             <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
               <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">

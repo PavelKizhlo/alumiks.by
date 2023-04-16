@@ -3,14 +3,16 @@ export default function About() {
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
         <h1 className="heading-h1">О нас</h1>
-        <h2 className="heading-h2">Общество с ограниченной ответственностью «Алюмикс»</h2>
+        <h2 className="heading-h2 text-center">
+          Общество с ограниченной ответственностью «Алюмикс»
+        </h2>
         <div className="flex flex-col gap-12">
           <p className="w-full text-center">
             ООО «Алюмикс» - динамично развивающееся предприятие. Работаем с 2008 года.
           </p>
           <div className="flex flex-col items-center gap-8">
             <h3 className="heading-h3">Наши преимущества:</h3>
-            <ul className="grid grid-cols-3 items-center justify-center gap-2">
+            <ul className="xs:grid-cols-2 grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-3">
               <li className="flex gap-4">
                 {' '}
                 <svg
@@ -142,7 +144,7 @@ export default function About() {
           </div>
           <div className="flex flex-col items-center gap-8">
             <h3 className="heading-h3">Основная специализация:</h3>
-            <ul className="grid grid-cols-2 items-center justify-center gap-2">
+            <ul className="xs:grid-cols-2 grid grid-cols-1 items-center justify-center gap-2">
               <li className="flex gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +228,7 @@ export default function About() {
           </div>
           <div className="flex flex-col items-center gap-8">
             <h3 className="heading-h3">Дополнительно:</h3>
-            <ul className="grid w-full grid-cols-2 gap-2">
+            <ul className="xs:grid-cols-2 grid w-full grid-cols-1 gap-2">
               <li>
                 <div className="flex w-full flex-col items-center gap-6">
                   <div className="flex items-center gap-4">

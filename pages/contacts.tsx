@@ -5,14 +5,17 @@ import phoneIcon from '@/public/icons/phone-icon-2.svg';
 import mailIcon from '@/public/icons/mail-icon-2.svg';
 import locationIcon from '@/public/icons/location-icon-2.svg';
 import clockIcon from '@/public/icons/clock-icon-2.svg';
+import useWidth from '../utils/useWidth';
 
 export default function Contacts() {
+  const windowWidth = useWidth();
+
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
         <h1 className="heading-h1">Контакты</h1>
-        <div className="flex items-center gap-28">
-          <div className="flex flex-col gap-6">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-28">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1">
             <div className="flex flex-col gap-2">
               <h2 className="heading-h2">Наши телефоны</h2>
               <div className="flex flex-row gap-4">
@@ -55,7 +58,7 @@ export default function Contacts() {
           <iframe
             title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1592.942179843965!2d30.37401331606319!3d53.869558817896774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d0524753ec9c8b%3A0x83d8f746a5d4f2f7!2zMS3QuSDQrtC20L3Ri9C5INC_0LXRgNC10YPQu9C-0LogMTYsINCc0L7Qs9C40LvRkdCy!5e0!3m2!1sru!2sby!4v1680636702574!5m2!1sru!2sby"
-            width="600"
+            width={windowWidth > 640 ? '600' : `${windowWidth - 100}`}
             height="450"
             style={{ border: 0 }}
             loading="lazy"

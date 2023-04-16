@@ -13,7 +13,7 @@ function AdvantagesBlock({ advantages }: AdvantagesBlockProps) {
       <div className="container flex flex-col gap-12">
         <div className="flex flex-col items-center gap-8 text-dark-shades">
           <h2 className="heading-h2">Преимущества нашей компании</h2>
-          <div className="grid grid-cols-4 gap-10">
+          <div className="grid max-w-[70%] grid-cols-1 gap-10 sm:max-w-full sm:grid-cols-2 xl:grid-cols-4">
             {advantages.map((item) => (
               <div key={item.id} className="rounded bg-dark-accent p-6">
                 <h3 className="heading-h3 mb-4 text-center text-light-shades">

@@ -8,7 +8,7 @@ import {
 
 const PRODUCTS: ProductGroup[] = [
   {
-    id: 1,
+    id: 1 * Math.random(),
     slug: 'ocinkovannaya-stal',
     title: 'Фасонные изделия из оцинкованной стали с полимерным покрытием',
     shortTitle: 'Фасонные изделия из оцинкованной стали',
@@ -187,7 +187,7 @@ const PRODUCTS: ProductGroup[] = [
     ],
   },
   {
-    id: 2,
+    id: 2 * Math.random(),
     slug: 'izdeliya-iz-aluminiya',
     title: 'Изделия из алюминия',
     shortTitle: 'Изделия из алюминия',
@@ -242,7 +242,7 @@ const PRODUCTS: ProductGroup[] = [
     ],
   },
   {
-    id: 3,
+    id: 3 * Math.random(),
     slug: 'podokonniki',
     title: 'Пластиковые подоконники',
     shortTitle: 'Пластиковые подоконники',
@@ -269,7 +269,7 @@ const PRODUCTS: ProductGroup[] = [
     ],
   },
   {
-    id: 4,
+    id: 4 * Math.random(),
     slug: 'zabory',
     title: 'Заборы',
     shortTitle: 'Заборы',

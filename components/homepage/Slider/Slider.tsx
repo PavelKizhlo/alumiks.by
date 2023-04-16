@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { Card } from '@material-tailwind/react';
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { ProductGroup } from '@/types/product';
 import { KeenSliderOptions, useKeenSlider } from 'keen-slider/react';
