@@ -29,10 +29,14 @@ function Icon({ id, open }: { id: number; open: number }) {
 function BurgerNav() {
   const { pathname } = useRouter();
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen((cur) => !cur);
-
   const [openSubNav, setOpenSubNav] = useState(0);
   const [openSubNav2, setOpenSubNav2] = useState(0);
+
+  const handleOpen = () => {
+    setOpen((cur) => !cur);
+    setOpenSubNav(0);
+    setOpenSubNav2(0);
+  };
 
   const handleOpenSubNav = (value: number) => {
     setOpenSubNav(openSubNav === value ? 0 : value);
@@ -118,6 +122,7 @@ function BurgerNav() {
                     <Link
                       href={item.path}
                       className="link-underlined w-fit text-xl uppercase"
+                      onClick={handleOpen}
                     >
                       {item.title}
                     </Link>
@@ -136,6 +141,7 @@ function BurgerNav() {
                           <Link
                             href={`/products/${el.slug}`}
                             className="link-underlined w-fit text-xl"
+                            onClick={handleOpen}
                           >
                             {el.title}
                           </Link>
@@ -147,6 +153,7 @@ function BurgerNav() {
                                 key={itemEl.id}
                                 href={`/products/${el.slug}/${itemEl.slug}`}
                                 className="link-underlined w-fit text-xl"
+                                onClick={handleOpen}
                               >
                                 {itemEl.title}
                               </Link>
