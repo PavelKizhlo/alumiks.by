@@ -16,13 +16,13 @@ function ProductsBlock({ products }: ProductsBlockProps) {
         {products
           .sort((a, b) => b.items.length - a.items.length)
           .map((group) => (
-            <>
+            <React.Fragment key={group.id}>
               <Link className="" href={`/products/${group.slug}`}>
                 <h3 className="heading-h3 text-center text-dark-shades">{group.title}</h3>
               </Link>
 
               <Slider group={group} key={group.id} />
-            </>
+            </React.Fragment>
           ))}
       </div>
     </section>
