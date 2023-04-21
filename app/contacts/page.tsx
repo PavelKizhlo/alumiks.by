@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -5,7 +7,7 @@ import phoneIcon from '@/public/icons/phone-icon-2.svg';
 import mailIcon from '@/public/icons/mail-icon-2.svg';
 import locationIcon from '@/public/icons/location-icon-2.svg';
 import clockIcon from '@/public/icons/clock-icon-2.svg';
-import useWidth from '../utils/useWidth';
+import useWidth from '@/utils/useWidth';
 
 export default function Contacts() {
   const windowWidth = useWidth();

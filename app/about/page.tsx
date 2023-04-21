@@ -12,7 +12,7 @@ export default function About() {
           </p>
           <div className="flex flex-col items-center gap-8">
             <h3 className="heading-h3">Наши преимущества:</h3>
-            <ul className="xs:grid-cols-2 grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-3">
+            <ul className="grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-3 xs:grid-cols-2">
               <li className="flex gap-4">
                 {' '}
                 <svg
@@ -144,7 +144,7 @@ export default function About() {
           </div>
           <div className="flex flex-col items-center gap-8">
             <h3 className="heading-h3">Основная специализация:</h3>
-            <ul className="xs:grid-cols-2 grid grid-cols-1 items-center justify-center gap-2">
+            <ul className="grid grid-cols-1 items-center justify-center gap-2 xs:grid-cols-2">
               <li className="flex gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -228,7 +228,7 @@ export default function About() {
           </div>
           <div className="flex flex-col items-center gap-8">
             <h3 className="heading-h3">Дополнительно:</h3>
-            <ul className="xs:grid-cols-2 grid w-full grid-cols-1 gap-2">
+            <ul className="grid w-full grid-cols-1 gap-2 xs:grid-cols-2">
               <li>
                 <div className="flex w-full flex-col items-center gap-6">
                   <div className="flex items-center gap-4">

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Roboto_Slab, Roboto } from 'next/font/google';
 
-import Footer from './Footer';
-import Header from './Header';
+import Footer from '../footer';
+import Header from '../header';
 
 export const headingFont = Roboto_Slab({
   subsets: ['cyrillic'],

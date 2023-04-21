@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import bgImg from '@/public/imgs/new-heading.webp';
-import CallbackForm from './CallbackForm';
+import CallbackForm from './callbackForm';
 
 function HeadingBlock() {
   return (

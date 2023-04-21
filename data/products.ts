@@ -110,7 +110,7 @@ const PRODUCTS: ProductGroup[] = [
       },
       {
         id: 1.4,
-        slug: 'nashсelniki',
+        slug: 'nashelnik',
         images: [{ id: 1, src: '/products/nashhelnik.jpeg' }],
         title: 'Нащельники и декоративные элементы',
         colors: ocinkovannayaStalColors,

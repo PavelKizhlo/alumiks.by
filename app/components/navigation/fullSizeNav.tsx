@@ -1,13 +1,15 @@
+'use client';
+
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { Menu, MenuHandler, MenuList } from '@material-tailwind/react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
-import PRODUCTS from '../../data/products';
-import { NAVIGATION } from '../../data/navigation';
+import { usePathname } from 'next/navigation';
+import PRODUCTS from '@/data/products';
+import { NAVIGATION } from '@/data/navigation';
 
 function FullSizeNav() {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
 
   const triggers = {

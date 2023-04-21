@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -6,8 +8,8 @@ import logo from '@/public/logos/new-logo.svg';
 import useScrollDirection from '@/utils/useScrollDirection';
 
 import useWidth from '../utils/useWidth';
-import FullSizeNav from './navigation/FullSizeNav';
-import BurgerNav from './navigation/BurgerNav';
+import FullSizeNav from './components/navigation/fullSizeNav';
+import BurgerNav from './components/navigation/burgerNav';
 
 export default function Header() {
   const scrollDirection = useScrollDirection();

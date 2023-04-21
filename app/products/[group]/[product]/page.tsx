@@ -1,19 +1,33 @@
-import React from 'react';
+'use client';
+
+import React, { use } from 'react';
 
 import { Breadcrumbs, Card } from '@material-tailwind/react';
 
-import { ProductItem } from '@/types/product';
 import PRODUCTS from '@/data/products';
-import { GetStaticPropsContext } from 'next';
 import Link from 'next/link';
+import { ProductGroup, ProductItem } from '@/types/product';
 
-interface ProductPageProps {
-  product: ProductItem;
-  groupTitle: string;
-  groupSlug: string;
+async function loadProductPageData(params: { group: string; product: string }) {
+  const groupName = params.group;
+  const group = PRODUCTS.find(
+    (currentGroup) => currentGroup.slug === groupName
+  ) as ProductGroup;
+  const productName = params.product;
+  const product = group.items.find(
+    (currentProduct) => currentProduct.slug === productName
+  ) as ProductItem;
+
+  return { product, groupTitle: group.title, groupSlug: group.slug };
 }
 
-function ProductPage({ product, groupTitle, groupSlug }: ProductPageProps) {
+export default function ProductPage({
+  params,
+}: {
+  params: { group: string; product: string };
+}) {
+  const { product, groupTitle, groupSlug } = use(loadProductPageData(params));
+
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
@@ -98,31 +112,15 @@ function ProductPage({ product, groupTitle, groupSlug }: ProductPageProps) {
   );
 }
 
-export async function getStaticPaths() {
-  const paths: { params: unknown }[] = [];
+export async function generateStaticParams() {
+  const paths: { group: string; product: string }[] = [];
   PRODUCTS.forEach((group) => {
     group.items.forEach((product) => {
-      paths.push({ params: { group: group.slug, product: product.slug } });
+      paths.push({ group: group.slug, product: product.slug });
     });
   });
 
-  return {
-    paths,
-    fallback: false,
-  };
+  return paths;
 }
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  const groupName = context.params?.group;
-  const group = PRODUCTS.find((currentGroup) => currentGroup.slug === groupName);
-  const productName = context.params?.product;
-  const product = group?.items.find(
-    (currentProduct) => currentProduct.slug === productName
-  );
-
-  return {
-    props: { product, groupTitle: group?.title, groupSlug: group?.slug },
-  };
-}
-
-export default ProductPage;
+export const dynamicParams = true;

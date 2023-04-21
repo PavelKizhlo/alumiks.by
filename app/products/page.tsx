@@ -1,17 +1,18 @@
+'use client';
+
 import { Breadcrumbs, Card } from '@material-tailwind/react';
 
 import Link from 'next/link';
 
 import PRODUCTS from '@/data/products';
-import { ProductGroup } from '@/types/product';
-import useWidth from '../../utils/useWidth';
+import { use } from 'react';
 
-interface Props {
-  products: ProductGroup[];
+async function loadProducts() {
+  return PRODUCTS;
 }
 
-export default function Products({ products }: Props) {
-  const windowWidth = useWidth();
+export default function Products() {
+  const products = use(loadProducts());
 
   return (
     <section className="min-h-full bg-light-shades">
@@ -39,18 +40,15 @@ export default function Products({ products }: Props) {
               </Link>
             </h3>
             <div className="flex flex-col gap-10 sm:flex-row">
-              {group.items
-                // eslint-disable-next-line no-nested-ternary
-                .slice(0, windowWidth > 1080 ? 3 : windowWidth > 800 ? 2 : 1)
-                .map((item) => (
-                  <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
-                    <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">
-                      <div className="bg-blured absolute bottom-0 flex w-full items-center justify-center rounded-b-xl py-4 text-center text-white">
-                        <h4 className="heading-h4">{item.title}</h4>
-                      </div>
-                    </Card>
-                  </Link>
-                ))}
+              {group.items.map((item) => (
+                <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
+                  <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">
+                    <div className="bg-blured absolute bottom-0 flex w-full items-center justify-center rounded-b-xl py-4 text-center text-white">
+                      <h4 className="heading-h4">{item.title}</h4>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
               <Link href={`/products/${group.slug}`}>
                 <Card className="relative flex h-[230px] w-[230px] cursor-pointer items-center  justify-center bg-gray-600">
                   <span className="w-fit text-white">Больше &#10141;</span>
@@ -62,12 +60,4 @@ export default function Products({ products }: Props) {
       </div>
     </section>
   );
-}
-
-export function getStaticProps() {
-  return {
-    props: {
-      products: PRODUCTS,
-    },
-  };
 }

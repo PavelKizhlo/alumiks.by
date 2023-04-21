@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ProductGroup } from '@/types/product';
-import Slider from '@/components/homepage/Slider/Slider';
+import Slider from '@/app/components/homepage/slider/slider';
 import Link from 'next/link';
 
 interface ProductsBlockProps {

@@ -1,19 +1,23 @@
-import React from 'react';
+'use client';
+
+import React, { use } from 'react';
 
 import Link from 'next/link';
 import { Breadcrumbs, Card } from '@material-tailwind/react';
 
 import PRODUCTS from '@/data/products';
 import { ProductGroup } from '@/types/product';
-import { GetStaticPropsContext } from 'next';
 
-interface ProductCategoryPageProps {
-  group: ProductGroup;
+async function loadCategoryData(params: { group: string }) {
+  const groupName = params.group;
+  return PRODUCTS.find((currentGroup) => currentGroup.slug === groupName) as ProductGroup;
 }
 
 // TODO: в строке 23 из-за плагина неправильно перестанавливаются классы
 
-function ProductCategoryPage({ group }: ProductCategoryPageProps) {
+export default function ProductCategoryPage({ params }: { params: { group: string } }) {
+  const group = use(loadCategoryData(params));
+
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
@@ -56,24 +60,10 @@ function ProductCategoryPage({ group }: ProductCategoryPageProps) {
   );
 }
 
-export async function getStaticPaths() {
-  const paths = PRODUCTS.map((group) => ({
-    params: { group: group.slug },
+export async function generateStaticParams() {
+  return PRODUCTS.map((group) => ({
+    group: group.slug,
   }));
-
-  return {
-    paths,
-    fallback: false,
-  };
 }
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  const groupName = context.params?.group;
-  const group = PRODUCTS.find((currentGroup) => currentGroup.slug === groupName);
-
-  return {
-    props: { group },
-  };
-}
-
-export default ProductCategoryPage;
+export const dynamicParams = true;

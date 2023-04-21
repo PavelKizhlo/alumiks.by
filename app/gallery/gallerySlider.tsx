@@ -1,10 +1,10 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/control-has-associated-label */
+'use client';
+
 import { KeenSliderOptions } from 'keen-slider';
 import { useKeenSlider } from 'keen-slider/react';
 import Image from 'next/image';
-import { ItemImage } from '../../types/product';
-import SliderControlSVG from '../homepage/Slider/SliderControlSVG';
+import { ItemImage } from '@/types/product';
+import SliderControlSVG from '@/app/components/homepage/slider/sliderControlSVG';
 
 interface Props {
   options: KeenSliderOptions<unknown, unknown>;

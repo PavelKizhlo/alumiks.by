@@ -1,11 +1,13 @@
+'use client';
+
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { ProductGroup } from '@/types/product';
 import { KeenSliderOptions, useKeenSlider } from 'keen-slider/react';
 
 import 'keen-slider/keen-slider.min.css';
-import SliderControlSVG from '@/components/homepage/Slider/SliderControlSVG';
-import SliderCard from '@/components/homepage/Slider/SliderCard';
+import SliderControlSVG from '@/app/components/homepage/slider/sliderControlSVG';
+import SliderCard from '@/app/components/homepage/slider/sliderCard';
 
 interface SliderProps {
   group: ProductGroup;

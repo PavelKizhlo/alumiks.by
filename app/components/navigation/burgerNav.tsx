@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Accordion,
   AccordionBody,
@@ -7,9 +9,9 @@ import {
 } from '@material-tailwind/react';
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { NAVIGATION } from '../../data/navigation';
-import PRODUCTS from '../../data/products';
+import { usePathname } from 'next/navigation';
+import { NAVIGATION } from '@/data/navigation';
+import PRODUCTS from '@/data/products';
 
 function Icon({ id, open }: { id: number; open: number }) {
   return (
@@ -27,7 +29,7 @@ function Icon({ id, open }: { id: number; open: number }) {
 }
 
 function BurgerNav() {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [openSubNav, setOpenSubNav] = useState(0);
   const [openSubNav2, setOpenSubNav2] = useState(0);

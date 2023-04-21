@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Delivery() {
+export default function Delivery() {
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
@@ -75,5 +75,3 @@ function Delivery() {
     </section>
   );
 }
-
-export default Delivery;
