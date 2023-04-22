@@ -33,7 +33,7 @@ export default function Header() {
             className="w-[110px] md:w-[170px]"
           />
         </Link>
-        {windowWidth > 1280 ? <FullSizeNav /> : <BurgerNav />}
+        {windowWidth && (windowWidth > 1280 ? <FullSizeNav /> : <BurgerNav />)}
       </div>
     </header>
   );

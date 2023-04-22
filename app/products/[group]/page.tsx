@@ -1,6 +1,6 @@
 'use client';
 
-import React, { use } from 'react';
+import React, { use, useEffect, useRef } from 'react';
 
 import Link from 'next/link';
 import { Breadcrumbs, Card } from '@material-tailwind/react';
@@ -18,10 +18,19 @@ async function loadCategoryData(params: { group: string }) {
 export default function ProductCategoryPage({ params }: { params: { group: string } }) {
   const group = use(loadCategoryData(params));
 
+  const breadcrumbsWrapper = useRef<null | HTMLOListElement>(null);
+
+  useEffect(() => {
+    if (breadcrumbsWrapper.current) {
+      (breadcrumbsWrapper.current.parentElement as HTMLElement).style.width =
+        'fit-content';
+    }
+  }, []);
+
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
-        <Breadcrumbs>
+        <Breadcrumbs ref={breadcrumbsWrapper}>
           <Link
             href="/"
             className="text-dark-accent opacity-60 transition-colors duration-300 hover:text-dark-shades"

@@ -17,7 +17,7 @@ function Icon({ id, open }: { id: number; open: number }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={`${id === open ? 'rotate-180' : ''} h-5 w-5 transition-transform`}
+      className={`${id === open ? 'rotate-180 ' : ''} h-5 w-5 transition-transform`}
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -83,7 +83,7 @@ function BurgerNav() {
         ref={hiddenMenu}
         open={open}
         handler={handleOpen}
-        className="m-0 flex w-[400px] min-w-[400px] max-w-[100wv] bg-transparent text-xl font-bold shadow-none"
+        className="m-0 flex w-[300px] min-w-[300px] bg-transparent text-xl font-bold shadow-none 2xs:w-[400px]"
         animate={{
           mount: { scale: 1, x: 0 },
           unmount: { scale: 1, x: 100 },
@@ -123,7 +123,7 @@ function BurgerNav() {
                   >
                     <Link
                       href={item.path}
-                      className="link-underlined w-fit text-xl uppercase"
+                      className="border-r-solid w-full border-r-2 border-r-light-accent pr-5 text-xl uppercase"
                       onClick={handleOpen}
                     >
                       {item.title}
@@ -138,14 +138,14 @@ function BurgerNav() {
                       >
                         <AccordionHeader
                           onClick={() => handleOpenSubNav2(el.id)}
-                          className="border-none text-xl font-bold text-inherit "
+                          className="border-none text-xl font-bold text-inherit"
                         >
                           <Link
                             href={`/products/${el.slug}`}
-                            className="link-underlined w-fit text-xl"
+                            className="border-r-solid w-full border-r-2 border-r-light-accent pr-5 text-left text-xl"
                             onClick={handleOpen}
                           >
-                            {el.title}
+                            {el.shortTitle}
                           </Link>
                         </AccordionHeader>
                         <AccordionBody className="border-none text-xl font-bold text-inherit">
@@ -154,7 +154,7 @@ function BurgerNav() {
                               <Link
                                 key={itemEl.id}
                                 href={`/products/${el.slug}/${itemEl.slug}`}
-                                className="link-underlined w-fit text-xl"
+                                className="link-underlined w-fit pl-4 text-left text-xl"
                                 onClick={handleOpen}
                               >
                                 {itemEl.title}
@@ -169,9 +169,7 @@ function BurgerNav() {
               ) : (
                 <Link
                   key={item.id}
-                  className={`link-underlined uppercase ${
-                    pathname === item.path && 'text-info'
-                  }`}
+                  className={`uppercase ${pathname === item.path && 'text-info'}`}
                   href={item.path}
                   onClick={handleOpen}
                 >

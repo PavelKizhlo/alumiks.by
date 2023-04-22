@@ -1,6 +1,6 @@
 'use client';
 
-import React, { use } from 'react';
+import React, { use, useEffect, useRef } from 'react';
 
 import { Breadcrumbs, Card } from '@material-tailwind/react';
 
@@ -28,10 +28,19 @@ export default function ProductPage({
 }) {
   const { product, groupTitle, groupSlug } = use(loadProductPageData(params));
 
+  const breadcrumbsWrapper = useRef<null | HTMLOListElement>(null);
+
+  useEffect(() => {
+    if (breadcrumbsWrapper.current) {
+      (breadcrumbsWrapper.current.parentElement as HTMLElement).style.width =
+        'fit-content';
+    }
+  });
+
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
-        <Breadcrumbs>
+        <Breadcrumbs ref={breadcrumbsWrapper}>
           <Link
             href="/"
             className="text-dark-accent opacity-60 transition-colors duration-300 hover:text-dark-shades"

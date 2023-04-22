@@ -5,7 +5,7 @@ import { Breadcrumbs, Card } from '@material-tailwind/react';
 import Link from 'next/link';
 
 import PRODUCTS from '@/data/products';
-import { use } from 'react';
+import { use, useEffect, useRef } from 'react';
 
 async function loadProducts() {
   return PRODUCTS;
@@ -14,10 +14,19 @@ async function loadProducts() {
 export default function Products() {
   const products = use(loadProducts());
 
+  const breadcrumbsWrapper = useRef<null | HTMLOListElement>(null);
+
+  useEffect(() => {
+    if (breadcrumbsWrapper.current) {
+      (breadcrumbsWrapper.current.parentElement as HTMLElement).style.width =
+        'fit-content';
+    }
+  });
+
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
-        <Breadcrumbs>
+        <Breadcrumbs className="max-w-fit" ref={breadcrumbsWrapper}>
           <Link
             href="/"
             className="text-dark-accent opacity-60 transition-colors duration-300 hover:text-dark-shades"

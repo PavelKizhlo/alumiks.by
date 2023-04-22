@@ -60,7 +60,7 @@ export default function Contacts() {
           <iframe
             title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1592.942179843965!2d30.37401331606319!3d53.869558817896774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d0524753ec9c8b%3A0x83d8f746a5d4f2f7!2zMS3QuSDQrtC20L3Ri9C5INC_0LXRgNC10YPQu9C-0LogMTYsINCc0L7Qs9C40LvRkdCy!5e0!3m2!1sru!2sby!4v1680636702574!5m2!1sru!2sby"
-            width={windowWidth > 640 ? '600' : `${windowWidth - 100}`}
+            width={windowWidth && (windowWidth > 640 ? '600' : `${windowWidth - 100}`)}
             height="450"
             style={{ border: 0 }}
             loading="lazy"

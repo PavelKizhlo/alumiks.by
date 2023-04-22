@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="text-l bg-dark-shades py-10 text-light-shades">
       <div className="items-stetch container grid grid-flow-row gap-10 sm:grid-flow-col sm:gap-0 sm:divide-x-2 sm:divide-solid sm:divide-white">
-        {windowWidth > 1280 && (
+        {windowWidth && windowWidth > 1280 && (
           <section className="footer-text flex h-full flex-col gap-6 pr-12">
             <Link href="/products">
               <h3 className="heading-h3">Каталог</h3>
@@ -92,9 +92,11 @@ export default function Footer() {
           </div>
         </section>
         <section className="footer-text flex h-full flex-col gap-6 sm:pl-6 md:pl-12">
-          {windowWidth > 640 && <h3 className="heading-h3">Правовая информация</h3>}
+          {windowWidth && windowWidth > 640 && (
+            <h3 className="heading-h3">Правовая информация</h3>
+          )}
           <div className="flex h-full flex-col justify-between gap-4">
-            {windowWidth > 640 && (
+            {windowWidth && windowWidth > 640 && (
               <p>
                 Все права на материалы сайта принадлежат правообладателю OOO “АЛЮМИКС”.
                 Использование данных материалов в любой форме может производится только с
