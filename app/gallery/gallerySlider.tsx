@@ -4,7 +4,8 @@ import { KeenSliderOptions } from 'keen-slider';
 import { useKeenSlider } from 'keen-slider/react';
 import Image from 'next/image';
 import { ItemImage } from '@/types/product';
-import SliderControlSVG from '@/app/components/homepage/slider/sliderControlSVG';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import React from 'react';
 
 interface Props {
   options: KeenSliderOptions<unknown, unknown>;
@@ -24,7 +25,11 @@ function GallerySlider({ options, imgs }: Props) {
           instanceRef.current?.prev();
         }}
       >
-        <SliderControlSVG direction="left" />
+        <ChevronLeftIcon
+          stroke="currentColor"
+          strokeWidth={1.5}
+          className="h-12 w-12 stroke-warning lg:h-14 lg:w-14"
+        />
       </button>
 
       <div ref={sliderRef} className="keen-slider">
@@ -49,7 +54,11 @@ function GallerySlider({ options, imgs }: Props) {
           instanceRef.current?.next();
         }}
       >
-        <SliderControlSVG direction="right" />
+        <ChevronRightIcon
+          stroke="currentColor"
+          strokeWidth={1.5}
+          className="h-12 w-12 stroke-warning lg:h-14 lg:w-14"
+        />
       </button>
     </div>
   );

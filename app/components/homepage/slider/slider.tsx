@@ -6,8 +6,8 @@ import { ProductGroup } from '@/types/product';
 import { KeenSliderOptions, useKeenSlider } from 'keen-slider/react';
 
 import 'keen-slider/keen-slider.min.css';
-import SliderControlSVG from '@/app/components/homepage/slider/sliderControlSVG';
 import SliderCard from '@/app/components/homepage/slider/sliderCard';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 interface SliderProps {
   group: ProductGroup;
@@ -102,7 +102,11 @@ export default function Slider({ group }: SliderProps) {
             instanceRef.current?.prev();
           }}
         >
-          <SliderControlSVG direction="left" />
+          <ChevronLeftIcon
+            stroke="currentColor"
+            strokeWidth={1.5}
+            className="h-12 w-12 stroke-warning lg:h-14 lg:w-14"
+          />
         </button>
       )}
 
@@ -127,7 +131,11 @@ export default function Slider({ group }: SliderProps) {
             instanceRef.current?.next();
           }}
         >
-          <SliderControlSVG direction="right" />
+          <ChevronRightIcon
+            stroke="currentColor"
+            strokeWidth={1.5}
+            className="h-12 w-12 stroke-warning lg:h-14 lg:w-14"
+          />
         </button>
       )}
     </div>

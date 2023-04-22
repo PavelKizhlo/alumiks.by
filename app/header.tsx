@@ -18,13 +18,20 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed z-10 flex h-32 w-screen justify-center bg-main-color font-typo text-xl font-normal ${
+      className={`fixed z-10 flex h-24 w-screen justify-center bg-main-color font-typo text-xl font-normal md:h-32 ${
         scrollDirection === 'down' ? '-top-32' : 'top-0'
       } transition-[top] duration-150 ease-linear`}
     >
-      <div className="mx-auto flex w-full items-center justify-between px-8 md:px-32">
+      <div className="mx-auto flex w-full items-center justify-between px-8">
         <Link href="/">
-          <Image width={170} height={100} src={logo} alt="logo" />
+          <Image
+            width={170}
+            height={100}
+            sizes="(min-width: 768px) 110px, 170px"
+            src={logo}
+            alt="logo"
+            className="w-[110px] md:w-[170px]"
+          />
         </Link>
         {windowWidth > 1280 ? <FullSizeNav /> : <BurgerNav />}
       </div>

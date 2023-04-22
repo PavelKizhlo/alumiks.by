@@ -10,19 +10,19 @@
   }
 
   .heading-h1 {
-    @apply heading-common text-5xl font-medium;
+    @apply heading-common text-3xl 2xs:text-4xl lg:text-5xl font-medium;
   }
 
   .heading-h2 {
-    @apply heading-common text-4xl font-normal;
+    @apply heading-common text-2xl 2xs:text-3xl lg:text-4xl font-normal;
   }
 
   .heading-h3 {
-    @apply heading-common text-3xl font-light;
+    @apply heading-common text-xl 2xs:text-2xl lg:text-3xl font-light;
   }
 
   .heading-h4 {
-    @apply heading-common text-2xl font-extralight;
+    @apply heading-common text-lg 2xs:text-xl lg:text-2xl font-extralight;
   }
 
   // LINKS
@@ -42,6 +42,6 @@
 
   // COMMON PAGE WRAPPER STYLES
   .page-wrapper {
-    @apply container mx-auto flex flex-col items-center gap-12 pb-14 pt-20;
+    @apply container flex flex-col items-center gap-12 pb-14 pt-20;
   }
 }

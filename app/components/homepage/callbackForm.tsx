@@ -10,6 +10,7 @@ import {
   CardFooter,
   Input,
 } from '@material-tailwind/react';
+import { PhoneArrowDownLeftIcon } from '@heroicons/react/24/outline';
 
 export default function CallbackForm() {
   const [open, setOpen] = useState(false);
@@ -19,9 +20,11 @@ export default function CallbackForm() {
     <>
       <Button
         onClick={handleOpen}
-        className="font-inherit bg-header-color uppercase hover:shadow-indigo-300"
+        size="lg"
+        className="flex items-center gap-3 bg-warning hover:scale-105 hover:shadow-none"
       >
-        заказать звонок
+        Связаться с нами
+        <PhoneArrowDownLeftIcon strokeWidth={2} className="h-6 w-6" />
       </Button>
       <Dialog
         size="lg"

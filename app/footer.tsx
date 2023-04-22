@@ -27,7 +27,7 @@ export default function Footer() {
 
   return (
     <footer className="text-l bg-dark-shades py-10 text-light-shades">
-      <div className="items-stetch container grid grid-flow-row gap-4 sm:grid-flow-col sm:gap-0 sm:divide-x-2 sm:divide-solid sm:divide-white">
+      <div className="items-stetch container grid grid-flow-row gap-10 sm:grid-flow-col sm:gap-0 sm:divide-x-2 sm:divide-solid sm:divide-white">
         {windowWidth > 1280 && (
           <section className="footer-text flex h-full flex-col gap-6 pr-12">
             <Link href="/products">
@@ -44,7 +44,7 @@ export default function Footer() {
             </ul>
           </section>
         )}
-        <section className="footer-text flex h-full flex-col items-center justify-center gap-6 px-12">
+        <section className="footer-text flex h-full flex-col items-center gap-6 sm:items-start sm:pr-6 md:pr-12 xl:px-12">
           <Link href="/contacts">
             <h3 className="heading-h3">Контакты</h3>
           </Link>
@@ -91,14 +91,14 @@ export default function Footer() {
             </div>
           </div>
         </section>
-        <section className="footer-text flex h-full flex-col gap-6 pl-12">
+        <section className="footer-text flex h-full flex-col gap-6 sm:pl-6 md:pl-12">
           {windowWidth > 640 && <h3 className="heading-h3">Правовая информация</h3>}
           <div className="flex h-full flex-col justify-between gap-4">
             {windowWidth > 640 && (
               <p>
-                Все права на материалы сайта принадлежат правообладателю компании
-                “АЛЮМИКС”. Использование данных материалов в любой форме может
-                производится только с письменного разрешения правообладателя Сайта
+                Все права на материалы сайта принадлежат правообладателю OOO “АЛЮМИКС”.
+                Использование данных материалов в любой форме может производится только с
+                письменного разрешения правообладателя Сайта.
               </p>
             )}
             <div className="flex w-full flex-col-reverse items-center justify-center gap-4 lg:flex-row lg:justify-between lg:gap-0">
@@ -106,9 +106,10 @@ export default function Footer() {
                 2016–2023 Все права защищены
               </p>
               <Image
-                className="lg:self-end"
+                className="w-[110px] md:w-[170px] lg:self-end"
                 width={170}
                 height={100}
+                sizes="(min-width: 768px) 110px, 170px"
                 src={footerLogo}
                 alt="Логотип алюмикс"
               />
