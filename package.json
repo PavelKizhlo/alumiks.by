@@ -12,7 +12,7 @@
     "@heroicons/react": "^2.0.17",
     "@material-tailwind/react": "^1.4.2",
     "keen-slider": "^6.8.5",
-    "next": "13.3.0",
+    "next": "13.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
