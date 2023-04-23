@@ -115,7 +115,7 @@ export default function Slider({ group }: SliderProps) {
           <Link
             key={item.id}
             href={`/products/${group.slug}/${item.slug}`}
-            className="keen-slider__slide flex justify-center p-1 sm:p-3"
+            className="keen-slider__slide flex justify-center p-2 sm:p-3 xl:p-7"
           >
             <SliderCard item={item} />
           </Link>
