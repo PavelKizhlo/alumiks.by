@@ -153,7 +153,8 @@ export default function Slider({ group }: SliderProps) {
               <button
                 type="button"
                 aria-label={`карточка ${idx}`}
-                key={new Date().getTime()}
+                /* eslint-disable-next-line react/no-array-index-key */
+                key={idx}
                 onClick={() => {
                   instanceRef.current?.moveToIdx(idx);
                 }}
