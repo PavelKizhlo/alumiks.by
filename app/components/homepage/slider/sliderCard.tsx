@@ -11,7 +11,7 @@ interface SliderCardProps {
 
 export default function SliderCard({ item }: SliderCardProps) {
   return (
-    <Card className="group h-[420px] w-[315px] justify-center overflow-hidden rounded drop-shadow-md transition duration-300 sm:h-[336px] sm:w-[252px] md:h-[420px] md:w-[315px] lg:h-[480px] lg:w-[360px] xl:h-[432px] xl:w-[324px] xl:hover:scale-105 2xl:h-[480px] 2xl:w-[360px] 3xl:h-[424px] 3xl:w-[318px]">
+    <Card className="group h-[360px] w-[270px] justify-center overflow-hidden rounded drop-shadow-md transition duration-300 sm:h-[336px] sm:w-[252px] md:h-[420px] md:w-[315px] lg:h-[480px] lg:w-[360px] xl:h-[432px] xl:w-[324px] xl:hover:scale-105 2xl:h-[480px] 2xl:w-[360px] sm1:h-[420px] sm1:w-[315px] 3xl:h-[424px] 3xl:w-[318px]">
       <Image
         width={320}
         height={480}

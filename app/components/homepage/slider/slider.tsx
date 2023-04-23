@@ -8,6 +8,7 @@ import { KeenSliderOptions, useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import SliderCard from '@/app/components/homepage/slider/sliderCard';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import useWidth from '@/utils/useWidth';
 
 interface SliderProps {
   group: ProductGroup;
@@ -16,6 +17,9 @@ interface SliderProps {
 export default function Slider({ group }: SliderProps) {
   const [slidesEnd, setSlidesEnd] = useState(false);
   const [slidesStart, setSlidesStart] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const windowWidth = useWidth();
 
   const sliderOptions: KeenSliderOptions = {
     mode: 'free-snap',
@@ -25,6 +29,7 @@ export default function Slider({ group }: SliderProps) {
       perView: 1,
     },
     created(slider) {
+      setLoaded(true);
       // disables loop if number of slides equals to slides per view
       const slidesNumber = slider.slides.length;
       const slidesPerView = (slider.options.slides as { perView: number }).perView;
@@ -34,6 +39,7 @@ export default function Slider({ group }: SliderProps) {
     },
     slideChanged(slider) {
       const { abs, maxIdx, minIdx } = slider.track.details;
+      setCurrentSlide(slider.track.details.rel);
       setSlidesEnd(abs !== maxIdx);
       setSlidesStart(abs !== minIdx);
     },
@@ -93,7 +99,7 @@ export default function Slider({ group }: SliderProps) {
 
   return (
     <div className="relative w-full">
-      {slidesStart && (
+      {windowWidth && windowWidth > 640 && slidesStart && (
         <button
           type="button"
           aria-label="предыдующая карточка"
@@ -110,7 +116,7 @@ export default function Slider({ group }: SliderProps) {
         </button>
       )}
 
-      <div ref={sliderRef} className="keen-slider">
+      <div ref={sliderRef} className="keen-slider mb-6 sm:mb-0">
         {group.items.map((item) => (
           <Link
             key={item.id}
@@ -122,7 +128,7 @@ export default function Slider({ group }: SliderProps) {
         ))}
       </div>
 
-      {slidesEnd && (
+      {windowWidth && windowWidth > 640 && slidesEnd && (
         <button
           type="button"
           aria-label="следующая карточка"
@@ -137,6 +143,24 @@ export default function Slider({ group }: SliderProps) {
             className="h-12 w-12 stroke-warning lg:h-14 lg:w-14"
           />
         </button>
+      )}
+
+      {windowWidth && windowWidth < 640 && loaded && instanceRef.current && (
+        <div className="flex justify-center gap-2">
+          {Array(instanceRef.current.track.details.slides.length)
+            .fill(1)
+            .map((_, idx) => (
+              <button
+                type="button"
+                aria-label={`карточка ${idx}`}
+                key={new Date().getTime()}
+                onClick={() => {
+                  instanceRef.current?.moveToIdx(idx);
+                }}
+                className={`dot${currentSlide === idx ? ' dot-active' : ''}`}
+              />
+            ))}
+        </div>
       )}
     </div>
   );

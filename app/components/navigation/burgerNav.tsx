@@ -83,7 +83,7 @@ function BurgerNav() {
         ref={hiddenMenu}
         open={open}
         handler={handleOpen}
-        className="m-0 flex w-[300px] min-w-[300px] bg-transparent text-xl font-bold shadow-none 2xs:w-[400px]"
+        className="m-0 flex w-[300px] min-w-[300px] bg-transparent text-xl font-bold shadow-none sm1:w-[400px]"
         animate={{
           mount: { scale: 1, x: 0 },
           unmount: { scale: 1, x: 100 },
