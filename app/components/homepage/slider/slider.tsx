@@ -1,14 +1,14 @@
 'use client';
 
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
 import { ProductGroup } from '@/types/product';
 import { KeenSliderOptions, useKeenSlider } from 'keen-slider/react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-import 'keen-slider/keen-slider.min.css';
 import SliderCard from '@/app/components/homepage/slider/sliderCard';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import useWidth from '@/utils/useWidth';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import 'keen-slider/keen-slider.min.css';
 
 interface SliderProps {
   group: ProductGroup;
@@ -25,6 +25,7 @@ export default function Slider({ group }: SliderProps) {
     mode: 'free-snap',
     drag: true,
     loop: true,
+    renderMode: 'performance',
     slides: {
       perView: 1,
     },
