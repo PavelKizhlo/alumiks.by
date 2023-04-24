@@ -30,9 +30,9 @@ export default function CallbackForm() {
         size="lg"
         open={open}
         handler={handleOpen}
-        className="bg-transparent shadow-none"
+        className="w-[85%] max-w-[85%] bg-transparent shadow-none sm:w-3/4 sm:max-w-[60%]"
       >
-        <Card className="mx-auto w-full max-w-[30rem]">
+        <Card className="mx-auto w-full max-w-full sm:max-w-[30rem]">
           <CardHeader className="mb-4 flex h-28 place-items-center items-center justify-center bg-main-color p-4">
             <h4 className="heading-h4 text-center text-light-shades">
               Оставьте данные и мы свяжемся с вами в коротчайшие сроки
