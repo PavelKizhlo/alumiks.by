@@ -1,9 +1,8 @@
 'use client';
 
+import { ProductItem } from '@/types/product';
 import { Card } from '@material-tailwind/react';
 import Image from 'next/image';
-import React from 'react';
-import { ProductItem } from '@/types/product';
 
 interface SliderCardProps {
   item: ProductItem;
@@ -15,7 +14,16 @@ export default function SliderCard({ item }: SliderCardProps) {
       <Image
         width={320}
         height={480}
-        // TODO Write sizes for all tailwind breakpoints
+        sizes="
+        (min-width: 319px) 270px,
+        (min-width: 480px) 315px,
+        (min-width: 640px) 252px,
+        (min-width: 768px) 315px,
+        (min-width: 1024px) 360px,
+        (min-width: 1280px) 324px,
+        (min-width: 1536px) 360px,
+        (min-width: 1690px) 318px,
+        "
         src={item.images[0].src}
         alt={item.title}
         className="h-full w-full object-cover"
