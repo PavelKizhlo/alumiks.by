@@ -62,7 +62,7 @@ function BurgerNav() {
     <>
       <Button
         onClick={handleOpen}
-        className="font-inherit border-none bg-transparent p-0 uppercase shadow-none"
+        className="font-inherit focus:opacity-none active:opacity-none border-none bg-transparent p-0 shadow-none hover:shadow-none focus:shadow-none active:shadow-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +92,7 @@ function BurgerNav() {
         <div className="flex h-[100vh] w-full flex-col gap-12 bg-main-color p-8">
           <Button
             onClick={handleOpen}
-            className="font-inherit self-end border-none bg-transparent p-0 uppercase shadow-none"
+            className="font-inherit focus:opacity-none active:opacity-none self-end border-none bg-transparent p-0 shadow-none hover:shadow-none focus:shadow-none active:shadow-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ function BurgerNav() {
                 >
                   <AccordionHeader
                     onClick={() => handleOpenSubNav(item.id)}
-                    className="flex justify-center border-none text-xl font-bold text-inherit"
+                    className="flex justify-center border-none text-xl font-bold text-inherit hover:text-inherit"
                   >
                     <Link
                       href={item.path}
@@ -138,7 +138,7 @@ function BurgerNav() {
                       >
                         <AccordionHeader
                           onClick={() => handleOpenSubNav2(el.id)}
-                          className="border-none pl-2 text-xl font-bold text-inherit"
+                          className="border-none pl-2 text-xl font-bold text-inherit hover:text-inherit"
                         >
                           <Link
                             href={`/products/${el.slug}`}
@@ -154,7 +154,7 @@ function BurgerNav() {
                               <Link
                                 key={itemEl.id}
                                 href={`/products/${el.slug}/${itemEl.slug}`}
-                                className="link-underlined w-fit pl-4 text-left text-xl"
+                                className="w-fit pl-4 text-left text-xl"
                                 onClick={handleOpen}
                               >
                                 {itemEl.title}

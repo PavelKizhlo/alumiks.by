@@ -67,8 +67,8 @@ export default function ProductPage({
           </Link>
         </Breadcrumbs>
         <h1 className="heading-h1">{product.title}</h1>
-        <div className="flex w-full justify-between gap-12">
-          <div className="h-[700px] w-[400px] bg-gray-600">
+        <div className="flex w-full flex-col-reverse justify-between gap-12 sm:flex-row">
+          <div className="h-[700px] w-full bg-gray-600 sm:w-[400px]">
             {product.images.map((img) => (
               <div key={img.id}>{img.src}</div>
             ))}

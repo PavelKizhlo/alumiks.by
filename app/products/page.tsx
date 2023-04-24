@@ -49,15 +49,17 @@ export default function Products() {
               </Link>
             </h3>
             <div className="flex flex-col gap-10 sm:flex-row">
-              {group.items.map((item) => (
-                <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
-                  <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">
-                    <div className="bg-blured absolute bottom-0 flex w-full items-center justify-center rounded-b-xl py-4 text-center text-white">
-                      <h4 className="heading-h4">{item.title}</h4>
-                    </div>
-                  </Card>
-                </Link>
-              ))}
+              {(group.items.length > 4 ? group.items.slice(0, 4) : group.items).map(
+                (item) => (
+                  <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
+                    <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">
+                      <div className="bg-blured absolute bottom-0 flex w-full items-center justify-center rounded-b-xl py-4 text-center text-white">
+                        <h4 className="heading-h4">{item.title}</h4>
+                      </div>
+                    </Card>
+                  </Link>
+                )
+              )}
               <Link href={`/products/${group.slug}`}>
                 <Card className="relative flex h-[230px] w-[230px] cursor-pointer items-center  justify-center bg-gray-600">
                   <span className="w-fit text-white">Больше &#10141;</span>

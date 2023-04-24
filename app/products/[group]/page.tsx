@@ -13,8 +13,6 @@ async function loadCategoryData(params: { group: string }) {
   return PRODUCTS.find((currentGroup) => currentGroup.slug === groupName) as ProductGroup;
 }
 
-// TODO: в строке 23 из-за плагина неправильно перестанавливаются классы
-
 export default function ProductCategoryPage({ params }: { params: { group: string } }) {
   const group = use(loadCategoryData(params));
 
@@ -53,13 +51,20 @@ export default function ProductCategoryPage({ params }: { params: { group: strin
         <h1 className="heading-h1">{group.title}</h1>
         <div className="h-[250px] w-full bg-gray-700 text-center">Изображение</div>
         <p className="text-lg">{group.description}</p>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-4 xs:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
           {group.items.map((item) => (
             <Link href={`/products/${group.slug}/${item.slug}`} key={item.id}>
-              <Card className="relative h-[230px] w-[230px] cursor-pointer bg-gray-600">
-                <div className="bg-blured absolute bottom-0 flex w-full items-center justify-center rounded-b-xl py-4 text-center text-white">
-                  <h4 className="heading-h4">{item.title}</h4>
+              <Card className="h-fit w-[270px] justify-center gap-2 overflow-hidden p-4 drop-shadow-md transition duration-300 sm:h-[336px] sm:w-[252px] md:h-[420px] md:w-[315px] lg:h-[480px] lg:w-[360px] xl:h-[432px] xl:w-[324px] xl:hover:scale-105 2xl:h-[480px] 2xl:w-[360px] sm1:h-[420px] sm1:w-[315px] 3xl:h-[424px] 3xl:w-[318px]">
+                <h4 className="heading-h4 text-center">{item.title}</h4>
+                <div className="h-[300px] w-full bg-blue-gray-700">
+                  {item.images[0].src}
                 </div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore tempora
+                  dolores eaque animi, porro, perspiciatis exercitationem vitae cum
+                  similique omnis vero mollitia nemo dicta consequatur, quod impedit.
+                  Tenetur, voluptatibus nihil!
+                </p>
               </Card>
             </Link>
           ))}
