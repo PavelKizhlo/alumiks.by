@@ -109,7 +109,7 @@ function BurgerNav() {
               />
             </svg>
           </Button>
-          <nav className="flex flex-col items-center gap-6 text-light-shades">
+          <nav className="flex flex-col items-start gap-6 overflow-y-auto text-light-shades">
             {NAVIGATION.map((item) =>
               item.path === '/products' ? (
                 <Accordion
@@ -123,7 +123,7 @@ function BurgerNav() {
                   >
                     <Link
                       href={item.path}
-                      className="border-r-solid w-full border-r-2 border-r-light-accent pr-5 text-xl uppercase"
+                      className="border-r-solid w-full border-r-2 border-r-light-accent pr-5 text-left text-xl uppercase"
                       onClick={handleOpen}
                     >
                       {item.title}
@@ -138,7 +138,7 @@ function BurgerNav() {
                       >
                         <AccordionHeader
                           onClick={() => handleOpenSubNav2(el.id)}
-                          className="border-none text-xl font-bold text-inherit"
+                          className="border-none pl-2 text-xl font-bold text-inherit"
                         >
                           <Link
                             href={`/products/${el.slug}`}
