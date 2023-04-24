@@ -5,7 +5,7 @@ export default function Delivery() {
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
         {' '}
-        <h1 className="heading-h1">Оплата и доставка</h1>
+        <h1 className="heading-h1 text-center">Оплата и доставка</h1>
         <div className="flex w-full flex-col gap-6">
           <h2 className="heading-h2">Оплата</h2>
           <div className="flex flex-col gap-4">
