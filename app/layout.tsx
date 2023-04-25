@@ -1,9 +1,7 @@
-'use client';
-
+import { Roboto, Roboto_Slab } from 'next/font/google';
 import React from 'react';
-import { Roboto_Slab, Roboto } from 'next/font/google';
 
-import { ThemeProvider } from '@material-tailwind/react';
+import Providers from '@/app/providers';
 
 import '@/styles/globals.scss';
 
@@ -30,7 +28,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ru">
-      <ThemeProvider>
+      <Providers>
         <body
           className={`flex h-screen flex-col ${headingFont.variable} ${typoFont.variable}`}
         >
@@ -38,7 +36,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <main className="grow pt-20 font-typo">{children}</main>
           <Footer />
         </body>
-      </ThemeProvider>
+      </Providers>
     </html>
   );
 }
