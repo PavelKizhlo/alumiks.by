@@ -1,6 +1,6 @@
-import { Material } from '@/types/material';
+import { Stage } from '@/types/stage';
 
-const MATERIALS: Material[] = [
+const STAGES: Stage[] = [
   { id: 1, icon: '+', description: 'Устойчив к осадкам и перепадам температуры' },
   { id: 2, icon: '+', description: 'Устойчив к осадкам и перепадам температуры' },
   { id: 3, icon: '+', description: 'Устойчив к осадкам и перепадам температуры' },
@@ -27,4 +27,4 @@ const MATERIALS: Material[] = [
   },
 ];
 
-export default MATERIALS;
+export default STAGES;
