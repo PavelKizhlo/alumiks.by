@@ -1,32 +1,21 @@
-'use client';
-
-import { Breadcrumbs, Card } from '@material-tailwind/react';
+import Breadcrumbs from '@/app/components/materialUI/breadcrumbs';
+import Card from '@/app/components/materialUI/card';
 
 import Link from 'next/link';
 
 import PRODUCTS from '@/data/products';
-import { use, useEffect, useRef } from 'react';
 
 async function loadProducts() {
   return PRODUCTS;
 }
 
-export default function Products() {
-  const products = use(loadProducts());
-
-  const breadcrumbsWrapper = useRef<null | HTMLOListElement>(null);
-
-  useEffect(() => {
-    if (breadcrumbsWrapper.current) {
-      (breadcrumbsWrapper.current.parentElement as HTMLElement).style.width =
-        'fit-content';
-    }
-  });
+export default async function Products() {
+  const products = await loadProducts();
 
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
-        <Breadcrumbs className="max-w-fit" ref={breadcrumbsWrapper}>
+        <Breadcrumbs className="max-w-fit">
           <Link
             href="/"
             className="text-dark-accent opacity-60 transition-colors duration-300 hover:text-dark-shades"

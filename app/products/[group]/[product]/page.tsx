@@ -1,12 +1,9 @@
-'use client';
-
-import React, { use, useEffect, useRef } from 'react';
-
-import { Breadcrumbs, Card } from '@material-tailwind/react';
+import Breadcrumbs from '@/app/components/materialUI/breadcrumbs';
+import Card from '@/app/components/materialUI/card';
 
 import PRODUCTS from '@/data/products';
-import Link from 'next/link';
 import { ProductGroup, ProductItem } from '@/types/product';
+import Link from 'next/link';
 
 async function loadProductPageData(params: { group: string; product: string }) {
   const groupName = params.group;
@@ -21,26 +18,17 @@ async function loadProductPageData(params: { group: string; product: string }) {
   return { product, groupTitle: group.title, groupSlug: group.slug };
 }
 
-export default function ProductPage({
+export default async function ProductPage({
   params,
 }: {
   params: { group: string; product: string };
 }) {
-  const { product, groupTitle, groupSlug } = use(loadProductPageData(params));
-
-  const breadcrumbsWrapper = useRef<null | HTMLOListElement>(null);
-
-  useEffect(() => {
-    if (breadcrumbsWrapper.current) {
-      (breadcrumbsWrapper.current.parentElement as HTMLElement).style.width =
-        'fit-content';
-    }
-  });
+  const { product, groupTitle, groupSlug } = await loadProductPageData(params);
 
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
-        <Breadcrumbs ref={breadcrumbsWrapper}>
+        <Breadcrumbs>
           <Link
             href="/"
             className="text-dark-accent opacity-60 transition-colors duration-300 hover:text-dark-shades"

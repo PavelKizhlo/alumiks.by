@@ -1,9 +1,6 @@
-'use client';
-
-import React, { use, useEffect, useRef } from 'react';
-
+import Breadcrumbs from '@/app/components/materialUI/breadcrumbs';
+import Card from '@/app/components/materialUI/card';
 import Link from 'next/link';
-import { Breadcrumbs, Card } from '@material-tailwind/react';
 
 import PRODUCTS from '@/data/products';
 import { ProductGroup } from '@/types/product';
@@ -13,22 +10,17 @@ async function loadCategoryData(params: { group: string }) {
   return PRODUCTS.find((currentGroup) => currentGroup.slug === groupName) as ProductGroup;
 }
 
-export default function ProductCategoryPage({ params }: { params: { group: string } }) {
-  const group = use(loadCategoryData(params));
-
-  const breadcrumbsWrapper = useRef<null | HTMLOListElement>(null);
-
-  useEffect(() => {
-    if (breadcrumbsWrapper.current) {
-      (breadcrumbsWrapper.current.parentElement as HTMLElement).style.width =
-        'fit-content';
-    }
-  }, []);
+export default async function ProductCategoryPage({
+  params,
+}: {
+  params: { group: string };
+}) {
+  const group = await loadCategoryData(params);
 
   return (
     <section className="min-h-full bg-light-shades">
       <div className="page-wrapper">
-        <Breadcrumbs ref={breadcrumbsWrapper}>
+        <Breadcrumbs>
           <Link
             href="/"
             className="text-dark-accent opacity-60 transition-colors duration-300 hover:text-dark-shades"
