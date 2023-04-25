@@ -1,13 +1,13 @@
-import React from 'react';
-
-import { Advantage } from '@/types/advantage';
+import ADVANTAGES from '@/data/advantages';
 import Image from 'next/image';
 
-interface AdvantagesBlockProps {
-  advantages: Advantage[];
+async function loadAdvantages() {
+  return ADVANTAGES;
 }
 
-function AdvantagesBlock({ advantages }: AdvantagesBlockProps) {
+export default async function AdvantagesBlock() {
+  const advantages = await loadAdvantages();
+
   return (
     <section className="bg-light-shades py-10">
       <div className="container flex flex-col gap-12">
@@ -37,5 +37,3 @@ function AdvantagesBlock({ advantages }: AdvantagesBlockProps) {
     </section>
   );
 }
-
-export default AdvantagesBlock;

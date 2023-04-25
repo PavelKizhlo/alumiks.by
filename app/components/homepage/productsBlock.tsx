@@ -1,14 +1,16 @@
 import React from 'react';
 
-import { ProductGroup } from '@/types/product';
 import Slider from '@/app/components/homepage/slider/slider';
+import PRODUCTS from '@/data/products';
 import Link from 'next/link';
 
-interface ProductsBlockProps {
-  products: ProductGroup[];
+async function loadProducts() {
+  return PRODUCTS;
 }
 
-function ProductsBlock({ products }: ProductsBlockProps) {
+export default async function ProductsBlock() {
+  const products = await loadProducts();
+
   return (
     <section className="bg-light-shades pb-10 pt-10 md:pb-20">
       <div className="container flex flex-col items-center gap-6 md:gap-10">
@@ -28,5 +30,3 @@ function ProductsBlock({ products }: ProductsBlockProps) {
     </section>
   );
 }
-
-export default ProductsBlock;
