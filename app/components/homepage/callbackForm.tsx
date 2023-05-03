@@ -1,16 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { PhoneArrowDownLeftIcon } from '@heroicons/react/24/outline';
 import {
   Button,
-  Dialog,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
+  CardHeader,
+  Dialog,
   Input,
 } from '@material-tailwind/react';
-import { PhoneArrowDownLeftIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 
 export default function CallbackForm() {
   const [open, setOpen] = useState(false);
@@ -32,7 +32,7 @@ export default function CallbackForm() {
         handler={handleOpen}
         className="w-[85%] max-w-[85%] bg-transparent shadow-none sm:w-3/4 sm:max-w-[60%]"
       >
-        <Card className="mx-auto w-full max-w-full sm:max-w-[30rem]">
+        <Card className="mx-auto w-full max-w-full sm:max-w-[30rem] callbackform">
           <CardHeader className="mb-4 flex h-28 place-items-center items-center justify-center bg-main-color p-4">
             <h4 className="heading-h4 text-center text-light-shades">
               Оставьте данные и мы свяжемся с вами в коротчайшие сроки
@@ -41,14 +41,20 @@ export default function CallbackForm() {
           <CardBody className="flex flex-col gap-4">
             <form className="flex flex-col gap-4">
               <Input label="Ваше имя" size="lg" required />
-              <Input label="Номер телефона" size="lg" required type="phone" />
+              <Input label="Номер телефона" size="lg" required type="tel" />
               <Input
-                type="emil"
+                type="email"
                 label="Email"
                 size="lg"
                 className="border-main-color outline-main-color"
               />
-              <Input label="Сообщение" size="lg" required className="h-[400px]" />
+              <Input
+                label="Сообщение"
+                size="lg"
+                required
+                className="h-[400px]"
+                minLength={5}
+              />
             </form>
           </CardBody>
           <CardFooter className="flex justify-center pt-0">

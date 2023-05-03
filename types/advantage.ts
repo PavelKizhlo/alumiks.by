@@ -1,5 +1,5 @@
 export interface Advantage {
-  id: number;
+  id: string | number;
   icon: string;
   title: string;
   description: string;
