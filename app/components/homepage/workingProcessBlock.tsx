@@ -1,13 +1,11 @@
-import STAGES from '@/data/stages';
+import { Stage } from '@/types/stage';
 import Image from 'next/image';
 
-async function loadStages() {
-  return STAGES;
+interface Props {
+  stages: Stage[];
 }
 
-export default async function WorkingProcessBlock() {
-  const stages = await loadStages();
-
+export default async function WorkingProcessBlock({ stages }: Props) {
   return (
     <section className="bg-dark-shades py-10">
       <div className="container flex flex-col items-center gap-8 text-light-shades">

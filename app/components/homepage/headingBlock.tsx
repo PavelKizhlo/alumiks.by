@@ -1,10 +1,13 @@
 import Image from 'next/image';
-import React from 'react';
 
 import bgImg from '@/public/imgs/new-heading.webp';
 import CallbackForm from './callbackForm';
 
-export default function HeadingBlock() {
+interface Props {
+  headingText: string;
+}
+
+export default function HeadingBlock({ headingText }: Props) {
   return (
     <section className="bg-headingBlockBG relative flex h-fit flex-col items-center bg-contain bg-no-repeat">
       <Image
@@ -14,8 +17,7 @@ export default function HeadingBlock() {
       />
       <div className="container absolute top-0 flex h-full w-full flex-col items-center justify-between  pb-12 pt-20 sm:pt-32">
         <h1 className="heading-h1 rounded-xl p-2 text-center text-2xl text-light-shades backdrop-blur-md sm:text-4xl lg:text-start">
-          ALUMIKS - Производим алюминиевые рамы, изделия из жести, заборы,
-          противомоскитные сетки с 2008 года.
+          {headingText}
         </h1>
         <CallbackForm />
       </div>

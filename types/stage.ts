@@ -1,5 +1,5 @@
 export interface Stage {
-  id: number;
+  id: number | string;
   icon: string;
   title: string;
   description: string;
