@@ -1,11 +1,13 @@
-import { Stage } from '@/types/stage';
+import STAGES from '@/data/stages';
 import Image from 'next/image';
 
-interface Props {
-  stages: Stage[];
+function loadStages() {
+  return STAGES;
 }
 
-export default async function WorkingProcessBlock({ stages }: Props) {
+export default async function WorkingProcessBlock() {
+  const stages = loadStages();
+
   return (
     <section className="bg-dark-shades py-10">
       <div className="container flex flex-col items-center gap-8 text-light-shades">
@@ -22,13 +24,13 @@ export default async function WorkingProcessBlock({ stages }: Props) {
                     width={68}
                     height={68}
                     src={stage.icon}
-                    className="w-2/3 lg:w-[54px] w-[68px]"
+                    className=" lg:w-[54px] w-[50px] sm:w-[68px]"
                     alt="иконка"
                   />
                 </div>
               </div>
-              <span className="hidden sm1:block lg:hidden w-[40px] xs:w-[80px] md:w-[50px] group-even:order-1 h-[2px] bg-warning" />
-              <div className="lg:w-auto w-[260px] group-even:text-start group-odd:text-end lg:text-center justify-start lg:group-odd:border-t-2 border-warning lg:group-odd:pt-24 lg:group-even:pb-24 xl:group-odd:pt-28 xl:group-even:pb-28 3xl:group-odd:pt-32 3xl:group-even:pb-32">
+              <span className="hidden sm1:block xs:block sm:block lg:hidden w-[40px] xs:w-[80px] md:w-[50px] group-even:order-1 h-[2px] bg-warning" />
+              <div className="lg:w-auto w-[260px] group-even:text-start group-odd:text-end lg:group-even:text-center lg:group-odd:text-center justify-start lg:group-odd:border-t-2 border-warning lg:group-odd:pt-24 lg:group-even:pb-24 xl:group-odd:pt-28 xl:group-even:pb-28 3xl:group-odd:pt-32 3xl:group-even:pb-32">
                 <p className="heading-h4 text-lg sm1:text-xl lg:text-lg xl:text-xl 2xl:text-2xl">
                   {stage.title}
                 </p>
